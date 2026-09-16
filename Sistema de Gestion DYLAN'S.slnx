@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="CRUB.BLL/CRUB.BLL.csproj" />
+  <Project Path="CRUD.BAR/CRUD.UI.csproj" />
+  <Project Path="CRUD.DAL/CRUD.DAL.csproj" />
+</Solution>
