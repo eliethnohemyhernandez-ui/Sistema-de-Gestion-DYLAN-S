@@ -21,7 +21,7 @@ namespace CRUD.DAL.Repocitorio
 
                     foreach (var proveedores in lista)
                     {
-                         SqlCommand cmd = new SqlCommand("sp_InsertarProveedor", connection);
+                        SqlCommand cmd = new SqlCommand("USP_AgregarProveedor", connection);
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
 
@@ -60,9 +60,9 @@ namespace CRUD.DAL.Repocitorio
                 {
                     connection.Open();
 
-                    //Personalizar el comando
-                    string sql = "SELECT * FROM Proveedor WHERE Estado = 1";
-                    SqlCommand cmd = new SqlCommand(sql, connection);
+                    //Personalizar el comando a enviar a la BD
+                    SqlCommand cmd = new SqlCommand("USP_ListarProveedor", connection);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -70,7 +70,7 @@ namespace CRUD.DAL.Repocitorio
                     {
                         var Proveedores = new Proveedores()
                         {
-                            IdProveedor = (int)reader["id_Proveedor"],
+                            id_Proveedor = (int)reader["id_Proveedor"],
                             Nombre = reader["Nombre"].ToString(),
                             Telefono = reader["Telefono"].ToString(),
                             Empresa = reader["Empresa"].ToString(),
@@ -111,7 +111,7 @@ namespace CRUD.DAL.Repocitorio
                     {
                         var Proveedores = new Proveedores()
                         {
-                            IdProveedor = (int)reader["id_Proveedor"],
+                            id_Proveedor = (int)reader["id_Proveedor"],
                             Nombre = reader["Nombre"].ToString(),
                             Telefono = reader["Telefono"].ToString(),
                             Empresa = reader["Empresa"].ToString(),
@@ -176,7 +176,7 @@ namespace CRUD.DAL.Repocitorio
                     cmd.Parameters.AddWithValue("@Telefono", proveedores.Telefono);
                     cmd.Parameters.AddWithValue("@Empresa", proveedores.Empresa);
                     cmd.Parameters.AddWithValue("@Estado", proveedores.Estado);
-                    cmd.Parameters.AddWithValue("@id_Proveedor", proveedores.IdProveedor);
+                    cmd.Parameters.AddWithValue("@id_Proveedor", proveedores.id_Proveedor);
 
                     cmd.ExecuteNonQuery();
 

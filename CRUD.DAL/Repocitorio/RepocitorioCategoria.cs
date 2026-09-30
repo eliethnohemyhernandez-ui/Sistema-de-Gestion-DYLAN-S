@@ -3,6 +3,7 @@ using CRUD.DAL.Entidades;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Text;
 
 namespace CRUD.DAL.Repocitorio
@@ -21,11 +22,11 @@ namespace CRUD.DAL.Repocitorio
 
                     foreach (var categoria in lista)
                     {
-                        SqlCommand cmd = new SqlCommand("sp_InsertarCategoria", connection);
+                        SqlCommand cmd = new SqlCommand("USP_AgregarCategoria", connection);
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                         // Asignacion de valores a los Parametros de consusta
-                        cmd.Parameters.AddWithValue("@NombreCategoria", categoria.Nombre);
+                        cmd.Parameters.AddWithValue("@Nombre", categoria.Nombre);
                         cmd.Parameters.AddWithValue("@Descripcion", categoria.Descripcion);
                         cmd.Parameters.AddWithValue("@Estado", categoria.Estado);
                         cmd.Parameters.AddWithValue("@CreadoPor", categoria.CreadoPor ?? "Add");
@@ -59,8 +60,8 @@ namespace CRUD.DAL.Repocitorio
                     connection.Open();
 
                     //Personalizar el comando
-                    string sql = "SELECT * FROM Categoria WHERE Estado = 1";
-                    SqlCommand cmd = new SqlCommand(sql, connection);
+                    SqlCommand cmd = new SqlCommand("USP_VerCategoria", connection);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -68,8 +69,8 @@ namespace CRUD.DAL.Repocitorio
                     {
                         var categoria = new Categoria()
                         {
-                            IdCategoria = (int)reader["id_Categoria"],
-                            Nombre = reader["NombreCategoria"].ToString(),
+                            id_Categoria = (int)reader["id_Categoria"],
+                            Nombre = reader["Nombre"].ToString(),
                             Descripcion = reader["Descripcion"].ToString(),
                             Estado = (bool)reader["Estado"],
                             CreadoPor = reader["CreadoPor"].ToString(),
@@ -108,8 +109,8 @@ namespace CRUD.DAL.Repocitorio
                     {
                         var categoria = new Categoria()
                         {
-                            IdCategoria = (int)reader["id_Categoria"],
-                            Nombre = reader["NombreCategoria"].ToString(),
+                            id_Categoria = (int)reader["id_Categoria"],
+                            Nombre = reader["Nombre"].ToString(),
                             Descripcion = reader["Descripcion"].ToString(),
                             Estado = (bool)reader["Estado"],
                             CreadoPor = reader["CreadoPor"].ToString(),
@@ -129,8 +130,8 @@ namespace CRUD.DAL.Repocitorio
             }
         }
 
-        // Eliminar 
-        public void EliminarPorid(int idCategoria)
+        // Desactivar 
+        public void DesactivarPorid(int idCategoria)
         {
             try
             {
@@ -138,25 +139,19 @@ namespace CRUD.DAL.Repocitorio
                 {
                     connection.Open();
 
-                    string sql = "UPDATE Categoria SET Estado = 0 WHERE id_Categoria = @id_Categoria";
+                    SqlCommand cmd = new SqlCommand("USP_DesactivarCategoria", connection);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    SqlCommand cmd = new SqlCommand(sql, connection);
-                    cmd.Parameters.AddWithValue("@id_Categoria",idCategoria);
-
+                    cmd.Parameters.AddWithValue("@id_Categoria", idCategoria);
                     cmd.ExecuteNonQuery();
-
-
                     connection.Close();
-
-
-                    
                 }
-
             }
-            catch
+            catch (Exception)
             {
                 throw;
             }
+
         }
         //editar una categoria
         public void Actualizar(Categoria categoria)
@@ -166,14 +161,14 @@ namespace CRUD.DAL.Repocitorio
                 using (SqlConnection connection = BDConexion.connect())
                 {
                     connection.Open();
-                    string sql = "UPDATE Categoria SET NombreCategoria =@NombreCategoria,Descripcion = @Descripcion,Estado = @Estado WHERE id_Categoria = @id_Categoria";
+                    SqlCommand cmd = new SqlCommand("USP_EditarCategoria", connection);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    SqlCommand cmd = new SqlCommand(sql, connection);
 
-                    cmd.Parameters.AddWithValue("@NombreCategoria", categoria.Nombre);
+                    cmd.Parameters.AddWithValue("@Nombre", categoria.Nombre);
                     cmd.Parameters.AddWithValue("@Descripcion", categoria.Descripcion);
                     cmd.Parameters.AddWithValue("@Estado", categoria.Estado);
-                    cmd.Parameters.AddWithValue("@id_Categoria", categoria.IdCategoria);
+                    cmd.Parameters.AddWithValue("@id_Categoria", categoria.id_Categoria);
 
                     cmd.ExecuteNonQuery();
 

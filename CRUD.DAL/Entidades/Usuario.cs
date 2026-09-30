@@ -6,7 +6,7 @@ namespace CRUD.DAL.Entidades
 {
     public class Usuario
     {
-        int _idUsuario;
+        int _id_Usuario;
         
         
 
@@ -30,11 +30,11 @@ namespace CRUD.DAL.Entidades
 
 
 
-        public int IdUsuario
+        public int id_Usuario
         {
             get
             {
-                return _idUsuario;
+                return _id_Usuario;
             }
             set
             {
@@ -42,7 +42,7 @@ namespace CRUD.DAL.Entidades
                 {
                     throw new ArgumentException("Error: IdUsuario no debe de ser negativo");
                 }
-                _idUsuario = value;
+                _id_Usuario = value;
             }
 
 

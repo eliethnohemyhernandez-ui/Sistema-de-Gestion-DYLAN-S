@@ -6,18 +6,18 @@ namespace CRUD.DAL.Entidades
 {
     public class Metodo
     {
-        int _idMetodo;
+        int _id_Metodo;
 
 
         public string Nombre { get; set; }
         
         public bool Estado { get; set; }
 
-        public int IdMetodo
+        public int id_Metodo
         {
             get
             {
-                return _idMetodo;
+                return _id_Metodo;
             }
             set
             {
@@ -25,7 +25,7 @@ namespace CRUD.DAL.Entidades
                 {
                     throw new ArgumentException("Error: IdMetodo no debe de ser negativo");
                 }
-                _idMetodo= value;
+                _id_Metodo= value;
             }
 
         }

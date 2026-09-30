@@ -77,7 +77,7 @@ namespace CRUD.UI
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = ListaProveedores;
 
-            dataGridView1.Columns["IdProveedor"].Visible = false;
+            dataGridView1.Columns["id_Proveedor"].Visible = false;
 
 
         }
@@ -87,7 +87,7 @@ namespace CRUD.UI
             // Crear una instancia de proveedores
             Proveedores proveedores = new Proveedores();
 
-            proveedores.IdProveedor = ListaProveedores[indiceSeleccionado].IdProveedor;
+            proveedores.id_Proveedor = ListaProveedores[indiceSeleccionado].id_Proveedor;
             proveedores.Nombre = txtNombre.Text;
             proveedores.Telefono = txtTelefono.Text;
             proveedores.Empresa = txtEmpresa.Text;

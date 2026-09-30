@@ -6,7 +6,7 @@ namespace CRUD.DAL.Entidades
 {
     public class Personal
     {
-       int _idPersonal;
+       int _id_Personal;
 
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -19,11 +19,11 @@ namespace CRUD.DAL.Entidades
 
         public string CreadoPor {  get; set; }
 
-        public int IdPersonal
+        public int id_Personal
             {
             get
             {
-               return _idPersonal;
+               return _id_Personal;
             }
             set
             {
@@ -31,7 +31,7 @@ namespace CRUD.DAL.Entidades
                {
                   throw new ArgumentException("Error: IdPersonal no debe de ser negativo");
                }
-                  _idPersonal = value;
+                  _id_Personal = value;
             }
 
         }

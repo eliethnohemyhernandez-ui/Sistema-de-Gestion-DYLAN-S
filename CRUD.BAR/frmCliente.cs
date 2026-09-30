@@ -31,8 +31,8 @@ namespace CRUD.UI
             Cliente cliente = new Cliente();
 
             cliente.Nombre = txtNombre.Text;
-            cliente.Apellido = txtApellido.Text;
-            cliente.Cedula = txtCedula.Text;
+            cliente.Telefono = txtTelefono.Text;
+            cliente.Estado = true;
 
             // Agregamos a la lista categoria
             ListaClienteTem.Add(cliente);
@@ -47,8 +47,8 @@ namespace CRUD.UI
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             txtNombre.Clear();
-            txtApellido.Clear();
-            txtCedula.Clear();
+            cbEstado.Clear();
+            txtTelefono.Clear();
 
         }
 
@@ -69,7 +69,7 @@ namespace CRUD.UI
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            ListaCliente = _servicioCliente.ObtenerList();
+            ListaCliente = _servicioCliente.ObtenerLista();
 
             //Alimentar la dat griGrid con la lista categoria
             dataGridView1.DataSource = null;
@@ -83,10 +83,14 @@ namespace CRUD.UI
             // Crear una instancia de categoria
             Cliente cliente = new Cliente();
 
-            cliente.IdCliente = ListaCliente[indiceseleccionado].IdCliente;
+            cliente.id_Cliente = ListaCliente[indiceseleccionado].id_Cliente;
             cliente.Nombre = txtNombre.Text;
-            cliente.Apellido = txtApellido.Text;
-            cliente.Cedula = txtCedula.Text;
+            cliente.Telefono = txtTelefono.Text;
+
+            if (cbEstado.Text == "Activo")
+                cliente.Estado = true;
+            else if (cbEstado.Text == "Inactivo")
+                cliente.Estado = false;
 
 
             // invocamos al servicio de categoria
@@ -115,7 +119,7 @@ namespace CRUD.UI
                 _servicioCliente.EliminarPorid(idCliente);
 
                 // 5. Refrescamos 
-                ListaCliente = _servicioCliente.ObtenerList();
+                ListaCliente = _servicioCliente.ObtenerLista();
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = ListaCliente;
 

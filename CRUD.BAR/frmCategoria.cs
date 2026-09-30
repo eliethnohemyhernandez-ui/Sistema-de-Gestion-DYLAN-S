@@ -355,7 +355,7 @@ namespace CRUD.UI
             if (resultado == DialogResult.Yes)
             {
 
-                _servicioCategoria.EliminarPorid(idCategoria);
+                _servicioCategoria.DesactivarPorid(idCategoria);
 
                 // 5. Refrescamos 
                 ListaCategoria = _servicioCategoria.ObtenerList();
@@ -393,7 +393,7 @@ namespace CRUD.UI
             // Crear una instancia de categoria
             Categoria categoria = new Categoria();
 
-            categoria.IdCategoria = ListaCategoria[indiceseleccionado].IdCategoria;
+            categoria.id_Categoria = ListaCategoria[indiceseleccionado].id_Categoria;
             categoria.Nombre = txtNombreCategoria.Text;
             categoria.Descripcion = txtDescripcion.Text;
             categoria.CreadoPor = "Jose Hernanadez";

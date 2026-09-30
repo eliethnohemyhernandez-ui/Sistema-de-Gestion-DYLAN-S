@@ -8,7 +8,7 @@ namespace CRUD.DAL.Entidades
     {
         //Atributos
         //Campos
-        int _idProducto;
+        int _id_Producto;
         decimal _precio;
         int _stockDisponible;
         internal int idProveedor;
@@ -26,11 +26,11 @@ namespace CRUD.DAL.Entidades
         public string NombreCategoria{ get; set; }
 
         //Propiedades
-        public int IdProducto
+        public int id_Producto
         {
             get
             {
-                return _idProducto;
+                return _id_Producto;
             }
             set
             {
@@ -38,7 +38,7 @@ namespace CRUD.DAL.Entidades
                 {
                     throw new ArgumentException("Error: Id no puede ser negativo");
                 }
-                _idProducto = value;
+                _id_Producto = value;
             }
         }
 

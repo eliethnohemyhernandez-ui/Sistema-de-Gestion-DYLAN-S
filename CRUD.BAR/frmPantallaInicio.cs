@@ -36,11 +36,32 @@ namespace CRUD.UI
         }
 
         private void btnCategoria_Click(object sender, EventArgs e)
-        { }
+        {
 
 
+            if (UsuarioRol == 4)
+            {
+                MessageBox.Show("No tiene permisos  para acceder a Categorías.");
+
+                return;
+            }
+
+            if (this.panelContenedorPrincipal.Controls.Count > 0)
+                this.panelContenedorPrincipal.Controls.RemoveAt(0);
 
 
+            frmCategoria fh = new frmCategoria();
+
+
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill; // Esto hace que se adapte al tamaño del panel
+
+
+            this.panelContenedorPrincipal.Controls.Add(fh);
+            this.panelContenedorPrincipal.Tag = fh;
+            fh.Show();
+        }
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
@@ -95,16 +116,78 @@ namespace CRUD.UI
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
-        { }
+        {
 
+            if (UsuarioRol == 4)
+            {
+                MessageBox.Show("No tiene permisos  para acceder a Proveedor.");
+
+                return;
+            }
+
+
+            if (this.panelContenedorPrincipal.Controls.Count > 0)
+                this.panelContenedorPrincipal.Controls.RemoveAt(0);
+
+
+            frmProveedore fh = new frmProveedore();
+
+
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill; // Esto hace que se adapte al tamaño del panel
+
+
+            this.panelContenedorPrincipal.Controls.Add(fh);
+            this.panelContenedorPrincipal.Tag = fh;
+            fh.Show();
+        }
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
+
+            if (this.panelContenedorPrincipal.Controls.Count > 0)
+                this.panelContenedorPrincipal.Controls.RemoveAt(0);
+
+
+            frmCliente fh = new frmCliente();
+
+
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill; // Esto hace que se adapte al tamaño del panel
+
+
+            this.panelContenedorPrincipal.Controls.Add(fh);
+            this.panelContenedorPrincipal.Tag = fh;
+            fh.Show();
         }
 
         private void btnPersonal_Click(object sender, EventArgs e)
         {
+            if (UsuarioRol == 4)
+            {
+                MessageBox.Show("No tiene permisos  para acceder a Perssonal.");
 
+                return;
+            }
+
+
+            if (this.panelContenedorPrincipal.Controls.Count > 0)
+                this.panelContenedorPrincipal.Controls.RemoveAt(0);
+
+
+            frmPersonal fh = new frmPersonal();
+
+
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill; // Esto hace que se adapte al tamaño del panel
+
+
+            this.panelContenedorPrincipal.Controls.Add(fh);
+            this.panelContenedorPrincipal.Tag = fh;
+            fh.Show();
         }
 
         private void btnFactura_Click(object sender, EventArgs e)
@@ -128,22 +211,91 @@ namespace CRUD.UI
         }
 
         private void btnCatalogoProducto_Click(object sender, EventArgs e)
-        { }
+        {
 
+            if (this.panelContenedorPrincipal.Controls.Count > 0)
+                this.panelContenedorPrincipal.Controls.RemoveAt(0);
+
+
+            frmProducto fh = new frmProducto();
+
+
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill; // Esto hace que se adapte al tamaño del panel
+
+
+            this.panelContenedorPrincipal.Controls.Add(fh);
+            this.panelContenedorPrincipal.Tag = fh;
+            fh.Show();
+        }
 
         private void btnMetodo_Click(object sender, EventArgs e)
         {
 
+            if (this.panelContenedorPrincipal.Controls.Count > 0)
+                this.panelContenedorPrincipal.Controls.RemoveAt(0);
 
+
+            frmMetodo_Pago fh = new frmMetodo_Pago();
+
+
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill; // Esto hace que se adapte al tamaño del panel
+
+
+            this.panelContenedorPrincipal.Controls.Add(fh);
+            this.panelContenedorPrincipal.Tag = fh;
+            fh.Show();
         }
 
         private void btnGestionU_Click(object sender, EventArgs e)
         {
 
+            if (this.panelContenedorPrincipal.Controls.Count > 0)
+                this.panelContenedorPrincipal.Controls.RemoveAt(0);
+
+
+            FrmGestion_Usuario fh = new FrmGestion_Usuario();
+
+
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill; // Esto hace que se adapte al tamaño del panel
+
+
+            this.panelContenedorPrincipal.Controls.Add(fh);
+            this.panelContenedorPrincipal.Tag = fh;
+            fh.Show();
         }
 
         private void btnRol_Click(object sender, EventArgs e)
         {
+            if (UsuarioRol == 4)
+            {
+                MessageBox.Show("No tiene permisos  para acceder a Rol.");
+
+                return;
+            }
+
+
+
+            if (this.panelContenedorPrincipal.Controls.Count > 0)
+                this.panelContenedorPrincipal.Controls.RemoveAt(0);
+
+
+            frmUsuarioRol fh = new frmUsuarioRol();
+
+
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill;
+
+
+            this.panelContenedorPrincipal.Controls.Add(fh);
+            this.panelContenedorPrincipal.Tag = fh;
+            fh.Show();
 
         }
 
@@ -200,7 +352,7 @@ namespace CRUD.UI
 
                 if (login != null)
                 {
-                    // Buscamos los TextBox por su nombre 
+                    // Buscamos los TextBox por su nombre (Asegúrate de poner el nombre real de tus controles)
                     var txtUsuario = login.Controls.Find("txtUsuario", true).FirstOrDefault() as TextBox;
                     var txtContraseña = login.Controls.Find("txtContraseña", true).FirstOrDefault() as TextBox;
 
@@ -221,37 +373,23 @@ namespace CRUD.UI
             }
         }
 
-        private void panelContenedorPrincipal_Paint(object sender, PaintEventArgs e)
+        private void btnVenta_Click(object sender, EventArgs e)
         {
-            
-        }
+            if (this.panelContenedorPrincipal.Controls.Count > 0)
+                this.panelContenedorPrincipal.Controls.RemoveAt(0);
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
+            frmVenta fh = new frmVenta();
 
-        }
 
-        private void btnMasOpciones_Click(object sender, EventArgs e)
-        {
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill;
 
-            Mas_Opciones fh = new Mas_Opciones();
-            fh.WindowState = FormWindowState.Maximized;
+
+            this.panelContenedorPrincipal.Controls.Add(fh);
+            this.panelContenedorPrincipal.Tag = fh;
             fh.Show();
-
-        }
-
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
 
         }
     }

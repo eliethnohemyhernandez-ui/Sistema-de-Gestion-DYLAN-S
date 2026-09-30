@@ -6,18 +6,19 @@ namespace CRUD.DAL.Entidades
 {
     public class Cliente
     {
-        int _idCliente;
+        int _id_Cliente;
 
 
         public string Nombre { get; set; }
-        public string Apellido{ get; set; }
-        public string Cedula { get; set; }
+        public string Telefono { get; set; }
 
-        public int IdCliente
+        public bool Estado { get; set; }
+
+        public int id_Cliente
         {
             get
             {
-                return _idCliente;
+                return _id_Cliente;
             }
             set
             {
@@ -25,7 +26,7 @@ namespace CRUD.DAL.Entidades
                 {
                     throw new ArgumentException("Error: IdCliente no debe de ser negativo");
                 }
-                _idCliente = value;
+                _id_Cliente = value;
             }
 
         }

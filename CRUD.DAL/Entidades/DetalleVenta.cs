@@ -1,25 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CRUD.DAL.Entidades
 {
-    public class Compra
+    public class DetalleVenta
     {
-        int _id_compra;
-        int _id_Proveedor;
-        int _id_Personal;
+        int _id_Detalle;
+        int _id_Venta;
+        int _id_Producto;
 
+        public string NombreProducto { get; set; }
+        public int Cantidad { get; set; }
+        public decimal Precio_Unitario { get; set; }
+        public decimal Subtotal { get; set; }
 
+        public DateTime Fecha { get; set; }
 
-        public DateTime FechaCompra { get; set; }
-        public decimal Total { get; set; }
-
-        public int id_compra
+        public int id_Detalle
         {
             get
             {
-                return _id_compra;
+                return _id_Detalle;
             }
             set
             {
@@ -27,17 +31,15 @@ namespace CRUD.DAL.Entidades
                 {
                     throw new ArgumentException("Error");
                 }
-                _id_compra = value;
+                _id_Detalle = value;
             }
-
-
-
         }
-        public int id_Proveedor
+
+        public int id_Venta
         {
             get
             {
-                return _id_Proveedor;
+                return _id_Venta;
             }
             set
             {
@@ -45,18 +47,15 @@ namespace CRUD.DAL.Entidades
                 {
                     throw new ArgumentException("Error");
                 }
-                _id_Proveedor = value;
+                _id_Venta = value;
             }
-
-
-
-
         }
-        public int id_Personal
+
+        public int id_Producto
         {
             get
             {
-                return _id_Personal;
+                return _id_Producto;
             }
             set
             {
@@ -64,9 +63,9 @@ namespace CRUD.DAL.Entidades
                 {
                     throw new ArgumentException("Error");
                 }
-                _id_Personal = value;
+                _id_Producto = value;
             }
-
         }
     }
 }
+

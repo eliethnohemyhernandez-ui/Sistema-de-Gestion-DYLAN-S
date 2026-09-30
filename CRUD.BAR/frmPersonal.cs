@@ -65,7 +65,7 @@ namespace CRUD.UI
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            ListaPersonal = _servicioPersonal.ObtenerList();
+            ListaPersonal = _servicioPersonal.ObtenerLista();
 
             //Alimentar la dat griGrid con la lista categoria
             dataGridView1.DataSource = null;
@@ -78,7 +78,7 @@ namespace CRUD.UI
             // Crear una instancia de Personal
             Personal personal = new Personal();
 
-            personal.IdPersonal = ListaPersonal[indiceSeleccionado].IdPersonal;
+            personal.id_Personal = ListaPersonal[indiceSeleccionado].id_Personal;
             personal.Nombre = txtNombre.Text;
             personal.Apellido = txtApellido.Text;
             personal.Telefono = txtTelefono.Text;
@@ -118,7 +118,7 @@ namespace CRUD.UI
                 _servicioPersonal.EliminarPorid(idPersonal);
 
                 // 5. Refrescamos 
-                ListaPersonal = _servicioPersonal.ObtenerList();
+                ListaPersonal = _servicioPersonal.ObtenerLista();
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = ListaPersonal;
 

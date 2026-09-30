@@ -39,7 +39,7 @@ namespace CRUD.UI
 
             Detalle_Compra detalle = new Detalle_Compra();
 
-            detalle.idProducto = Convert.ToInt32(cmbProducto.SelectedValue);
+            detalle.id_Producto = Convert.ToInt32(cmbProducto.SelectedValue);
             detalle.NombreProducto = cmbProducto.Text;
             detalle.Cantidad = Convert.ToInt32(txtCantidad.Text);
             detalle.PrecioUnitario = Convert.ToInt32(txtPrecio.Text);
@@ -51,7 +51,7 @@ namespace CRUD.UI
             dvDetalleCompra.DataSource = listaDetalle;
 
             dvDetalleCompra.Columns["idDetalle"].Visible = false;
-            dvDetalleCompra.Columns["idProducto"].Visible = false;
+            dvDetalleCompra.Columns["id_Producto"].Visible = false;
             dvDetalleCompra.Columns["idCompra"].Visible = false;
 
             dvDetalleCompra.Columns["NombreProducto"].DisplayIndex = 1;
@@ -66,8 +66,8 @@ namespace CRUD.UI
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             Compra compra = new Compra();
-            compra.idPersonal = Convert.ToInt32(cmbPersonal.SelectedValue);
-            compra.idProveedor = Convert.ToInt32(cmbProveedor.SelectedValue);
+            compra.id_Personal = Convert.ToInt32(cmbPersonal.SelectedValue);
+            compra.id_Proveedor = Convert.ToInt32(cmbProveedor.SelectedValue);
             compra.FechaCompra = dateTime.Value;
 
 
@@ -95,15 +95,14 @@ namespace CRUD.UI
         {
             cmbProveedor.DataSource = _ServicioProveedores.ObtenerProveedoresActivos();
             cmbProveedor.DisplayMember = "Empresa";
-            cmbProveedor.ValueMember = "IdProveedor";
+            cmbProveedor.ValueMember = "id_Proveedor";
 
             cmbProducto.DataSource = _ServicioProducto.ObtenerListaActiva();
             cmbProducto.DisplayMember = "Nombre";
-            cmbProducto.ValueMember = "IdProducto";
-
-            cmbPersonal.DataSource = _ServicioPersonal.ObtenerList();
+            cmbProducto.ValueMember = "id_Producto";
+            cmbPersonal.DataSource = _ServicioPersonal.ObtenerLista();
             cmbPersonal.DisplayMember = "Nombre";
-            cmbPersonal.ValueMember = "IdPersonal";
+            cmbPersonal.ValueMember = "id_Personal";
         }
 
         private void btnVer_Click(object sender, EventArgs e)
@@ -111,9 +110,9 @@ namespace CRUD.UI
 
             dvDetalleCompra.DataSource = null;
             dvDetalleCompra.DataSource = _servicioCompra.ListaCompra();
-            dvDetalleCompra.Columns["idProducto"].Visible = false;
-            dvDetalleCompra.Columns["idCompra"].Visible = false;
-            dvDetalleCompra.Columns["idDetalle"].Visible = false;
+            dvDetalleCompra.Columns["id_Producto"].Visible = false;
+            dvDetalleCompra.Columns["id_Compra"].Visible = false;
+            dvDetalleCompra.Columns["id_Detalle"].Visible = false;
 
         }
         

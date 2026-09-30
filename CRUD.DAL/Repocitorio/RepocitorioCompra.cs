@@ -11,7 +11,7 @@ namespace CRUD.DAL.Repocitorio
     public class RepocitorioCompra
     {
 
-        //Registro de una lista de categorias//
+        //Registro de una lista 
         public bool Registrar(Compra compra, List<Detalle_Compra> detallesCompra)
         {
             try
@@ -25,20 +25,20 @@ namespace CRUD.DAL.Repocitorio
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     // Asignacion de valores a los Parametros de consusta
-                    cmd.Parameters.AddWithValue("@IdProveedor", compra.idProveedor);
+                    cmd.Parameters.AddWithValue("@id_Proveedor", compra.id_Proveedor);
                     cmd.Parameters.AddWithValue("@FechaCompra", compra.FechaCompra);
-                    cmd.Parameters.AddWithValue("@idPersonal", compra.idPersonal);
+                    cmd.Parameters.AddWithValue("@id_Personal", compra.id_Personal);
                     cmd.Parameters.Add("@Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
 
                     //Crear un objeto de tipo Datatable
                     var tablaDetalles = new DataTable();
-                    tablaDetalles.Columns.Add("idProducto", typeof(int));
+                    tablaDetalles.Columns.Add("id_Producto", typeof(int));
                     tablaDetalles.Columns.Add("Cantidad", typeof(int));
                     tablaDetalles.Columns.Add("PrecioUnitario", typeof(decimal));
 
                     foreach (var item in detallesCompra)
                     {
-                        tablaDetalles.Rows.Add(item.idProducto, item.Cantidad, item.PrecioUnitario);
+                        tablaDetalles.Rows.Add(item.id_Producto, item.Cantidad, item.PrecioUnitario);
                     }
 
                     cmd.Parameters.AddWithValue("@DetallesCompra", tablaDetalles);
