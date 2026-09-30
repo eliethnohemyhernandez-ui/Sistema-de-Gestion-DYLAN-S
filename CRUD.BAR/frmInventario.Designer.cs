@@ -34,6 +34,11 @@
             BusquedaInventario = new TextBox();
             label1 = new Label();
             btnBuscar = new Button();
+            Producto = new DataGridViewTextBoxColumn();
+            Precio_Unitario = new DataGridViewTextBoxColumn();
+            Stock = new DataGridViewTextBoxColumn();
+            Stock_Minimo = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -41,10 +46,11 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.Menu;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Producto, Precio_Unitario, Stock, Stock_Minimo, Estado });
             dataGridView1.Location = new Point(73, 131);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1378, 539);
+            dataGridView1.Size = new Size(1315, 539);
             dataGridView1.TabIndex = 2;
             // 
             // btnVer
@@ -99,6 +105,46 @@
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
             // 
+            // Producto
+            // 
+            Producto.DataPropertyName = "Producto";
+            Producto.HeaderText = "Producto";
+            Producto.MinimumWidth = 8;
+            Producto.Name = "Producto";
+            Producto.Width = 250;
+            // 
+            // Precio_Unitario
+            // 
+            Precio_Unitario.DataPropertyName = "Precio_Unitario";
+            Precio_Unitario.HeaderText = "Precio_Unitario";
+            Precio_Unitario.MinimumWidth = 8;
+            Precio_Unitario.Name = "Precio_Unitario";
+            Precio_Unitario.Width = 250;
+            // 
+            // Stock
+            // 
+            Stock.DataPropertyName = "Stock";
+            Stock.HeaderText = "Stock";
+            Stock.MinimumWidth = 8;
+            Stock.Name = "Stock";
+            Stock.Width = 250;
+            // 
+            // Stock_Minimo
+            // 
+            Stock_Minimo.DataPropertyName = "Stock_Minimo";
+            Stock_Minimo.HeaderText = "Stock_Minimo";
+            Stock_Minimo.MinimumWidth = 8;
+            Stock_Minimo.Name = "Stock_Minimo";
+            Stock_Minimo.Width = 250;
+            // 
+            // Estado
+            // 
+            Estado.DataPropertyName = "Estado";
+            Estado.HeaderText = "Estado";
+            Estado.MinimumWidth = 8;
+            Estado.Name = "Estado";
+            Estado.Width = 250;
+            // 
             // frmInventario
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -126,5 +172,10 @@
         private TextBox BusquedaInventario;
         private Label label1;
         private Button btnBuscar;
+        private DataGridViewTextBoxColumn Producto;
+        private DataGridViewTextBoxColumn Precio_Unitario;
+        private DataGridViewTextBoxColumn Stock;
+        private DataGridViewTextBoxColumn Stock_Minimo;
+        private DataGridViewTextBoxColumn Estado;
     }
 }
