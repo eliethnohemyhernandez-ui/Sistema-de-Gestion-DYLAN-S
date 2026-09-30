@@ -31,6 +31,10 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
+            btnActualizar = new Button();
+            btnVer = new Button();
+            btnEliminar = new Button();
+            btnRegistra = new Button();
             btnAgreagar = new Button();
             btnLimpiar = new Button();
             label10 = new Label();
@@ -52,11 +56,7 @@
             label3 = new Label();
             label2 = new Label();
             textBox3 = new TextBox();
-            btnEliminar = new Button();
-            btnActualizar = new Button();
             dataGridView1 = new DataGridView();
-            btnVer = new Button();
-            btnRegistra = new Button();
             label1 = new Label();
             btnBuscar = new Button();
             groupBox1.SuspendLayout();
@@ -98,6 +98,54 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Agregar Producto";
+            // 
+            // btnActualizar
+            // 
+            btnActualizar.BackColor = Color.DarkGoldenrod;
+            btnActualizar.ForeColor = Color.Black;
+            btnActualizar.Location = new Point(359, 552);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(112, 34);
+            btnActualizar.TabIndex = 4;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
+            // 
+            // btnVer
+            // 
+            btnVer.BackColor = Color.DarkGoldenrod;
+            btnVer.ForeColor = SystemColors.ActiveCaptionText;
+            btnVer.Location = new Point(191, 708);
+            btnVer.Name = "btnVer";
+            btnVer.Size = new Size(112, 34);
+            btnVer.TabIndex = 5;
+            btnVer.Text = "Ver";
+            btnVer.UseVisualStyleBackColor = false;
+            btnVer.Click += btnVer_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.DarkGoldenrod;
+            btnEliminar.ForeColor = Color.Black;
+            btnEliminar.Location = new Point(220, 597);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(112, 34);
+            btnEliminar.TabIndex = 3;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnRegistra
+            // 
+            btnRegistra.BackColor = Color.DarkGoldenrod;
+            btnRegistra.ForeColor = SystemColors.ActiveCaptionText;
+            btnRegistra.Location = new Point(334, 719);
+            btnRegistra.Name = "btnRegistra";
+            btnRegistra.Size = new Size(112, 34);
+            btnRegistra.TabIndex = 4;
+            btnRegistra.Text = "Registrar";
+            btnRegistra.UseVisualStyleBackColor = false;
+            btnRegistra.Click += btnRegistra_Click;
             // 
             // btnAgreagar
             // 
@@ -310,36 +358,12 @@
             // 
             textBox3.BackColor = Color.FromArgb(32, 32, 32);
             textBox3.ForeColor = Color.White;
-            textBox3.Location = new Point(560, 397);
+            textBox3.Location = new Point(574, 385);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.PlaceholderText = "           Buscar Producto...";
             textBox3.Size = new Size(609, 43);
             textBox3.TabIndex = 2;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.BackColor = Color.DarkGoldenrod;
-            btnEliminar.ForeColor = Color.Black;
-            btnEliminar.Location = new Point(220, 597);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(112, 34);
-            btnEliminar.TabIndex = 3;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += btnEliminar_Click;
-            // 
-            // btnActualizar
-            // 
-            btnActualizar.BackColor = Color.DarkGoldenrod;
-            btnActualizar.ForeColor = Color.Black;
-            btnActualizar.Location = new Point(359, 552);
-            btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(112, 34);
-            btnActualizar.TabIndex = 4;
-            btnActualizar.Text = "Actualizar";
-            btnActualizar.UseVisualStyleBackColor = false;
-            btnActualizar.Click += btnActualizar_Click;
             // 
             // dataGridView1
             // 
@@ -362,30 +386,6 @@
             dataGridView1.TabIndex = 5;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellContentDoubleClick += dataGridView1_CellContentDoubleClick;
-            // 
-            // btnVer
-            // 
-            btnVer.BackColor = Color.DarkGoldenrod;
-            btnVer.ForeColor = SystemColors.ActiveCaptionText;
-            btnVer.Location = new Point(191, 708);
-            btnVer.Name = "btnVer";
-            btnVer.Size = new Size(112, 34);
-            btnVer.TabIndex = 5;
-            btnVer.Text = "Ver";
-            btnVer.UseVisualStyleBackColor = false;
-            btnVer.Click += btnVer_Click;
-            // 
-            // btnRegistra
-            // 
-            btnRegistra.BackColor = Color.DarkGoldenrod;
-            btnRegistra.ForeColor = SystemColors.ActiveCaptionText;
-            btnRegistra.Location = new Point(334, 719);
-            btnRegistra.Name = "btnRegistra";
-            btnRegistra.Size = new Size(112, 34);
-            btnRegistra.TabIndex = 4;
-            btnRegistra.Text = "Registrar";
-            btnRegistra.UseVisualStyleBackColor = false;
-            btnRegistra.Click += btnRegistra_Click;
             // 
             // label1
             // 

@@ -37,10 +37,10 @@ namespace CRUD.UI
 
         private void btnCategoria_Click(object sender, EventArgs e)
         { }
-        
 
 
-           
+
+
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
@@ -97,14 +97,14 @@ namespace CRUD.UI
         private void btnProveedor_Click(object sender, EventArgs e)
         { }
 
-            
+
         private void btnCliente_Click(object sender, EventArgs e)
         {
         }
 
         private void btnPersonal_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnFactura_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace CRUD.UI
         private void btnMetodo_Click(object sender, EventArgs e)
         {
 
-            
+
         }
 
         private void btnGestionU_Click(object sender, EventArgs e)
@@ -144,7 +144,7 @@ namespace CRUD.UI
 
         private void btnRol_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void frmPantallaInicio_FormClosed(object sender, FormClosedEventArgs e)
@@ -223,26 +223,12 @@ namespace CRUD.UI
 
         private void panelContenedorPrincipal_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (this.panelControl.Controls.Count > 0)
-                this.panelControl.Controls.RemoveAt(0);
-
-
-            frmAyuda fh = new frmAyuda();
-
-
-            fh.TopLevel = false;
-            fh.FormBorderStyle = FormBorderStyle.None;
-            fh.Dock = DockStyle.Fill; // Esto hace que se adapte al tamaño del panel
-
-
-            this.panelControl.Controls.Add(fh);
-            this.panelControl.Tag = fh;
-            fh.Show();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -256,6 +242,16 @@ namespace CRUD.UI
             Mas_Opciones fh = new Mas_Opciones();
             fh.WindowState = FormWindowState.Maximized;
             fh.Show();
+
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
     }

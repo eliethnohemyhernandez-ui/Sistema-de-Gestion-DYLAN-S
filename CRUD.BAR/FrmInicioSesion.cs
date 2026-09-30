@@ -24,23 +24,11 @@ namespace CRUD.UI
 
         private void FrmInicioSesion_Load(object sender, EventArgs e)
         {
-            CentrarPanel();
+
 
         }
 
-        private void FrmInicioSesion_SizeChanged(object sender, EventArgs e)
-        {
-            CentrarPanel();
 
-        }
-        private void CentrarPanel()
-        {
-
-            int x = (this.ClientSize.Width - panelCentro.Width) / 2;
-            int y = (this.ClientSize.Height - panelCentro.Height) / 2;
-
-            panelCentro.Location = new Point(x, y);
-        }
 
         private void btnIniciar_Click_1(object sender, EventArgs e)
         {
@@ -53,13 +41,13 @@ namespace CRUD.UI
 
             if (usuario != null)
             {
-              
+
                 frmPantallaInicio pantallaInicio = new frmPantallaInicio(usuario.id_Rol);
 
-              
+
                 pantallaInicio.Show();
 
-            
+
                 this.Hide();
 
 
@@ -73,6 +61,21 @@ namespace CRUD.UI
         }
 
         private void txtContraseña_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
