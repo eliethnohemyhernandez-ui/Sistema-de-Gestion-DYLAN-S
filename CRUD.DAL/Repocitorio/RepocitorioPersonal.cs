@@ -19,21 +19,20 @@ namespace CRUD.DAL.Repocitorio
                     // Abrir conexion ala BD//
                     connection.Open();
 
-                    foreach (var categoria in lista)
+                    foreach (var personal in lista)
                     {
-                        SqlCommand cmd = new SqlCommand("sp_InsertarPersonal", connection);
+                        SqlCommand cmd = new SqlCommand("USP_AgregarEmpleado", connection);
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
 
                         // Asignacion de valores a los Parametros de consusta
-                        cmd.Parameters.AddWithValue("@Nombre", categoria.Nombre);
-                        cmd.Parameters.AddWithValue("@Apellido",categoria.Apellido);
-                        cmd.Parameters.AddWithValue("@Estado", categoria.Estado);
-                        cmd.Parameters.AddWithValue("@Sexo", categoria.Sexo);
-                        cmd.Parameters.AddWithValue("@Telefono", categoria.Telefono);
-                        cmd.Parameters.AddWithValue("@Correo", categoria.Correo);
-                        cmd.Parameters.AddWithValue("@Direccion", categoria.Direccion);
-                        cmd.Parameters.AddWithValue("@CreadoPor", categoria.CreadoPor ?? "ADD");
+                        cmd.Parameters.AddWithValue("@Nombre", personal.Nombre);
+                        cmd.Parameters.AddWithValue("@Estado", personal.Estado);
+                        cmd.Parameters.AddWithValue("@Sexo", personal.Sexo);
+                        cmd.Parameters.AddWithValue("@Telefono", personal.Telefono);
+                        cmd.Parameters.AddWithValue("@Correo", personal.Correo);
+                        cmd.Parameters.AddWithValue("@Direccion", personal.Direccion);
+                        cmd.Parameters.AddWithValue("@CreadoPor", personal.CreadoPor ?? "ADD");
 
 
                         //Ejecutar el comando
@@ -63,7 +62,7 @@ namespace CRUD.DAL.Repocitorio
                     connection.Open();
 
                     //Personalizar el comando
-                    string sql = "SELECT * FROM Personal WHERE Estado = 1";
+                    string sql = "SELECT * FROM Empleado WHERE Estado = 1";
                     SqlCommand cmd = new SqlCommand(sql, connection);
 
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -72,14 +71,13 @@ namespace CRUD.DAL.Repocitorio
                     {
                         var Personal = new Personal()
                         {
-                            IdPersonal = (int)reader["id_Personal"],
+                            id_Personal = (int)reader["id_Personal"],
                             Nombre = reader["Nombre"].ToString(),
-                            Apellido = reader["Apellido"].ToString(),
                             Estado = (bool)reader["Estado"],
-                            Sexo = (bool)reader["Sexo"],
+                            //Sexo = (bool)reader["Sexo"],
                             Telefono = reader["Telefono"].ToString(),
-                            Correo = reader["Correo"].ToString(),
-                            Direccion = reader["Correo"].ToString(),
+                           // Correo = reader["Correo"].ToString(),
+                          //  Direccion = reader["Correo"].ToString(),
                         };
 
                         ListaPersonal.Add(Personal);
@@ -138,12 +136,11 @@ namespace CRUD.DAL.Repocitorio
                     SqlCommand cmd = new SqlCommand(sql, connection);
 
                     cmd.Parameters.AddWithValue("@Nombre", personal.Nombre);
-                    cmd.Parameters.AddWithValue("@Apellido", personal.Apellido);
                     cmd.Parameters.AddWithValue("@Estado", personal.Estado);
                     cmd.Parameters.AddWithValue("@Telefono", personal.Telefono);
                     cmd.Parameters.AddWithValue("@Correo", personal.Correo);
                     cmd.Parameters.AddWithValue("@Direccion", personal.Direccion);
-                    cmd.Parameters.AddWithValue("@id_Personal", personal.IdPersonal);
+                    cmd.Parameters.AddWithValue("@id_Personal", personal.id_Personal);
 
                     cmd.ExecuteNonQuery();
 

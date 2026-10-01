@@ -6,9 +6,9 @@ namespace CRUD.DAL.Entidades
 {
     public class Detalle_Compra
     {
-        int _idDetalle;
-        int _idCompra;
-        int _idProducto;
+        int _id_Detalle;
+        int _id_Compra;
+        int _id_Producto;
 
         public string NombreProducto { get; set; }
         public int Cantidad { get; set; }
@@ -18,11 +18,11 @@ namespace CRUD.DAL.Entidades
         public DateTime Fecha { get; set; }
 
 
-        public int idDetalle
+        public int id_Detalle
         {
             get
             {
-                return _idDetalle;
+                return _id_Detalle;
             }
             set
             {
@@ -30,16 +30,16 @@ namespace CRUD.DAL.Entidades
                 {
                     throw new ArgumentException("Error");
                 }
-                _idDetalle = value;
+                _id_Detalle = value;
             }
 
 
         }
-        public int idCompra
+        public int id_Compra
         {
             get
             {
-                return _idCompra;
+                return _id_Compra;
             }
             set
             {
@@ -47,15 +47,15 @@ namespace CRUD.DAL.Entidades
                 {
                     throw new ArgumentException("Error");
                 }
-                _idCompra = value;
+                _id_Compra = value;
             }
 
         }
-        public int idProducto
+        public int id_Producto
         {
             get
             {
-                return _idProducto;
+                return _id_Producto;
             }
             set
             {
@@ -63,7 +63,7 @@ namespace CRUD.DAL.Entidades
                 {
                     throw new ArgumentException("Error");
                 }
-                _idProducto = value;
+                _id_Producto = value;
             }
 
         }

@@ -5,6 +5,7 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -30,7 +31,7 @@ namespace CRUD.DAL.Repocitorio
 
                         cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
                         cmd.Parameters.AddWithValue("@id_Categoria", producto.Categoria);
-                        cmd.Parameters.AddWithValue("@id_Proveedor", producto.Proveedor);
+                      //  cmd.Parameters.AddWithValue("@id_Proveedor", producto.Proveedor);
                         cmd.Parameters.AddWithValue("@Contenido", producto.contenido);
                         cmd.Parameters.AddWithValue("@GradoAlcoholico", producto.Grado);
                         cmd.Parameters.AddWithValue("@Precio", producto.Precio);
@@ -67,8 +68,8 @@ namespace CRUD.DAL.Repocitorio
                     connection.Open();
 
                     //Personalizar el comando
-                    string query = "SELECT * FROM uv_MostrarProductos";
-                    SqlCommand cmd = new SqlCommand(query, connection);
+                    SqlCommand cmd = new SqlCommand("USP_ListarProducto", connection);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -76,18 +77,18 @@ namespace CRUD.DAL.Repocitorio
                     {
                         var producto = new Producto()
                         {
-                            IdProducto = (int)reader["id_Producto"],
+                            id_Producto = (int)reader["id_Producto"],
                             Nombre = reader["Nombre"].ToString(),
                             Categoria = (int)reader["id_Categoria"],
-                            Proveedor = (int)reader["id_Proveedor"],
+                           /// Proveedor = (int)reader["id_Proveedor"],
                             contenido = reader["Contenido"].ToString(),
                             Grado = reader["GradoAlcoholico"].ToString(),
                             Precio= Convert.ToDecimal(reader["Precio"]),
                             StockDisponible = (int)reader["Stock"],
                             StockMinimo = reader["StockMinimo"].ToString(),
                             Estado = (bool)reader["Estado"],
-                            Empresa = reader["Empresa"].ToString(),
-                            NombreCategoria = reader["NombreCategoria"].ToString()
+                          //  Empresa = reader["Empresa"].ToString(),
+                          //  NombreCategoria = reader["Nombre"].ToString()
                            
 
                         };
@@ -105,53 +106,53 @@ namespace CRUD.DAL.Repocitorio
                 throw;
             }
         }
-        public List<Producto> ObtenerLista()
-        {
-            List<Producto> ListaProducto = new List<Producto>();
+        //public List<Producto> ObtenerLista()
+        //{
+        //    List<Producto> ListaProducto = new List<Producto>();
 
-            try
-            {
-                using (SqlConnection connection = BDConexion.connect())
-                {
-                    connection.Open(); 
+        //    try
+        //    {
+        //        using (SqlConnection connection = BDConexion.connect())
+        //        {
+        //            connection.Open(); 
 
-                    //Personalizar el comando
-                    string query = "SELECT P.id_Producto, P.Nombre,P.Contenido,P.Precio,P.id_Categoria,P.id_Proveedor,P.Stock,P.StockMinimo,P.GradoAlcoholico,P.Estado, c.NombreCategoria, Pr.Empresa FROM Producto p INNER JOIN Categoria c ON P.id_Categoria = c.id_Categoria INNER JOIN Proveedor pr ON P.id_Proveedor = pr.id_Proveedor";
-                    SqlCommand cmd = new SqlCommand(query, connection);
+        //            //Personalizar el comando
+        //            string query = "SELECT P.id_Producto, P.Nombre,P.Contenido,P.Precio,P.id_Categoria,P.id_Proveedor,P.Stock,P.StockMinimo,P.GradoAlcoholico,P.Estado, c.NombreCategoria, Pr.Empresa FROM Producto p INNER JOIN Categoria c ON P.id_Categoria = c.id_Categoria INNER JOIN Proveedor pr ON P.id_Proveedor = pr.id_Proveedor";
+        //            SqlCommand cmd = new SqlCommand(query, connection);
 
-                    SqlDataReader reader = cmd.ExecuteReader();
+        //            SqlDataReader reader = cmd.ExecuteReader();
 
-                    while (reader.Read())
-                    {
-                        var producto = new Producto()
-                        {
-                            IdProducto = (int)reader["id_Producto"],
-                            Nombre = reader["Nombre"].ToString(),
-                            Categoria = (int)reader["id_Categoria"],
-                            Proveedor = (int)reader["id_Proveedor"],
-                            contenido = reader["Contenido"].ToString(),
-                            Grado = reader["GradoAlcoholico"].ToString(),
-                            Precio = Convert.ToDecimal(reader["Precio"]),
-                            StockDisponible = (int)reader["Stock"],
-                            StockMinimo = reader["StockMinimo"].ToString(),
-                            Estado = (bool)reader["Estado"],
-                            NombreCategoria = reader["NombreCategoria"].ToString(),
-                            Empresa = reader["Empresa"].ToString(),
-                        };
+        //            while (reader.Read())
+        //            {
+        //                var producto = new Producto()
+        //                {
+        //                    IdProducto = (int)reader["id_Producto"],
+        //                    Nombre = reader["Nombre"].ToString(),
+        //                    Categoria = (int)reader["id_Categoria"],
+                        //    Proveedor = (int)reader["id_Proveedor"],
+                        //    contenido = reader["Contenido"].ToString(),
+                        //    Grado = reader["GradoAlcoholico"].ToString(),
+                        //    Precio = Convert.ToDecimal(reader["Precio"]),
+                        //    StockDisponible = (int)reader["Stock"],
+                        //    StockMinimo = reader["StockMinimo"].ToString(),
+                        //    Estado = (bool)reader["Estado"],
+                        //    NombreCategoria = reader["NombreCategoria"].ToString(),
+                        //    Empresa = reader["Empresa"].ToString(),
+                        //};
 
-                        ListaProducto.Add(producto);
-                    }
+                        //ListaProducto.Add(producto);
+        //            }
 
-                    connection.Close();
+        //            connection.Close();
 
-                    return ListaProducto;
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        //            return ListaProducto;
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
 
 
 
@@ -195,7 +196,7 @@ namespace CRUD.DAL.Repocitorio
                     string sql = "UPDATE Producto SET Nombre = @Nombre,id_Categoria = @id_Categoria,id_Proveedor = @id_Proveedor,Contenido = @Contenido,GradoAlcoholico = @GradoAlcoholico,Precio = @Precio,Stock = @StockDisponible,StockMinimo = @StockMinimo,@Estado = @Estado WHERE id_Producto = @id_Producto";
 
                     SqlCommand cmd = new SqlCommand(sql, connection);
-                    cmd.Parameters.AddWithValue("@id_Producto", producto.IdProducto);
+                    cmd.Parameters.AddWithValue("@id_Producto", producto.id_Producto);
                     cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
                     cmd.Parameters.AddWithValue("@id_Categoria", producto.Categoria);
                     cmd.Parameters.AddWithValue("@id_Proveedor", producto.Proveedor);
@@ -218,6 +219,32 @@ namespace CRUD.DAL.Repocitorio
 
             }
 
+        }
+
+        public int ObtenerStock(int id_Producto)
+        {
+            int stock = 0;
+
+            using (SqlConnection connection = BDConexion.connect())
+            {
+                using (SqlCommand cmd = new SqlCommand("USP_ObtenerStockProducto", connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@id_Producto", id_Producto);
+
+                    connection.Open();
+
+                    object resultado = cmd.ExecuteScalar();
+
+                    if (resultado != null && resultado != DBNull.Value)
+                    {
+                        stock = Convert.ToInt32(resultado);
+                    }
+                }
+            }
+
+            return stock;
         }
     }
 }

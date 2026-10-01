@@ -32,7 +32,7 @@ namespace CRUB.BLL.Servicios
                 _Repositorio.RegistrarLista(List);
             }
         }
-        public List<Metodo> ObtenerList()
+        public List<Metodo> ObtenerLista()
         {
             return _Repositorio.ObtenerLista();
         }

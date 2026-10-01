@@ -32,14 +32,14 @@ namespace CRUB.BLL.Servicios
         }
         
 
-        // VALIDACIONES DE NEGOCIO RELACIONADA A LA ELIMINACION DE UNA CATEGORIA
-        public void EliminarPorid(int idCtegoria)
+        // VALIDACIONES DE NEGOCIO RELACIONADA A LA DESACTIVACION DE UNA CATEGORIA
+        public void DesactivarPorid(int idCtegoria)
         {
             //VALIDACION DE ID NEGATIVO
             if (idCtegoria < 0)
                 throw new ArgumentException("Error: id no debe ser negativo");
 
-            _Repositorio.EliminarPorid(idCtegoria);
+            _Repositorio.DesactivarPorid(idCtegoria);
         }
 
         public void Actualizar(Categoria categoria)

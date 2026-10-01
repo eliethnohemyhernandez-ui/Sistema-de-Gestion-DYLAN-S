@@ -154,7 +154,7 @@ namespace CRUD.UI
             // Crear una instancia de categoria
             Usuario usuario = new Usuario();
 
-            usuario.IdUsuario = ListaUsuario[indiceseleccionado].IdUsuario;
+            usuario.id_Usuario = ListaUsuario[indiceseleccionado].id_Usuario;
             usuario.Nombre = txtNombre.Text;
             usuario.Contraseña = txtContraseña.Text;
             usuario.Correo = txtCorreo.Text;

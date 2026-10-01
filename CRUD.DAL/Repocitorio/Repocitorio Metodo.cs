@@ -66,7 +66,7 @@ namespace CRUD.DAL.Repocitorio
                     {
                         var metodo = new Metodo()
                         {
-                            IdMetodo = (int)reader["id_Metodo"],
+                            id_Metodo = (int)reader["id_Metodo"],
                             Nombre = reader["Nombre"].ToString(),
                             Estado = (bool)reader["Estado"]
                         };
@@ -129,7 +129,7 @@ namespace CRUD.DAL.Repocitorio
 
                     cmd.Parameters.AddWithValue("@Nombre", metodo.Nombre);
                     cmd.Parameters.AddWithValue("@Estado", metodo.Estado);
-                    cmd.Parameters.AddWithValue("@id_Metodo",metodo.IdMetodo);
+                    cmd.Parameters.AddWithValue("@id_Metodo",metodo.id_Metodo);
 
                     cmd.ExecuteNonQuery();
 

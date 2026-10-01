@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace CRUD.DAL.Repocitorio
@@ -58,23 +59,59 @@ namespace CRUD.DAL.Repocitorio
             using (SqlConnection connection = BDConexion.connect())
             {
                 connection.Open();
+<<<<<<< HEAD
                 string sql = @"SELECT * FROM Usuario WHERE NombreUsuario = @NombreUsuario AND Contraseña_Hash = @Contraseña_Hash";
                 SqlCommand cmd = new SqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@NombreUsuario"
                 , Nombre);
                 cmd.Parameters.AddWithValue("@Contraseña_Hash"
                 , contraseña);
+=======
+                // Convertir la contraseña escrita a SHA-256
+                using (SHA256 sha256 = SHA256.Create())
+                {
+                    byte[] bytes = Encoding.UTF8.GetBytes(contraseña);
+                    byte[] hash = sha256.ComputeHash(bytes);
+
+                    StringBuilder resultado = new StringBuilder();
+
+                    foreach (byte b in hash)
+                    {
+                        resultado.Append(b.ToString("X2"));
+                    }
+
+                    contraseña = resultado.ToString();
+                }
+
+                string sql = @"SELECT * FROM Usuario 
+                       WHERE NombreUsuario = @NombreUsuario 
+                       AND Contraseña_Hash = @Contraseña_Hash";
+
+                SqlCommand cmd = new SqlCommand(sql, connection);
+
+                cmd.Parameters.AddWithValue("@NombreUsuario", Nombre);
+                cmd.Parameters.AddWithValue("@Contraseña_Hash", contraseña);
+
+>>>>>>> e07d9ed5d1d710b9db9e693ae12a9fcd6d32e1c5
                 SqlDataReader reader = cmd.ExecuteReader();
+
                 if (reader.Read())
                 {
                     usuario = new Usuario
                     {
+<<<<<<< HEAD
                         IdUsuario = Convert.ToInt32(reader["id_Usuario"]),
                        Nombre = reader["NombreUsuario"].ToString(),
                         id_Rol = Convert.ToInt32(reader["id_Rol"]),
+=======
+                        id_Usuario = Convert.ToInt32(reader["id_Usuario"]),
+                        Nombre = reader["NombreUsuario"].ToString(),
+                        id_Rol = Convert.ToInt32(reader["id_Rol"])
+>>>>>>> e07d9ed5d1d710b9db9e693ae12a9fcd6d32e1c5
                     };
                 }
             }
+
             return usuario;
         }
         // Obtener los registros  desde la base de datos//
@@ -99,7 +136,7 @@ namespace CRUD.DAL.Repocitorio
                     {
                         var usuario = new Usuario()
                         {
-                            IdUsuario = (int)reader["id_Usuario"],
+                            id_Usuario = (int)reader["id_Usuario"],
                             Nombre = reader["NombreUsuario"].ToString(),
                             Correo = reader["Correo"].ToString(),
                             Contraseña = reader["Contraseña"].ToString(),
@@ -143,7 +180,7 @@ namespace CRUD.DAL.Repocitorio
                     {
                         var Usuario= new Usuario()
                         {
-                            IdUsuario = (int)reader["id_Usuario"],
+                            id_Usuario = (int)reader["id_Usuario"],
                             Nombre = reader["NombreUsuario"].ToString(),
                             Correo = reader["Correo"].ToString(),
                             Contraseña = reader["Contraseña"].ToString(),

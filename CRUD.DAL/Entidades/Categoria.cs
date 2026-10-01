@@ -6,7 +6,7 @@ namespace CRUD.DAL.Entidades
 {
     public class Categoria
     {
-        int _idCategoria;
+        int _id_Categoria;
 
 
         public string Nombre { get; set; }
@@ -16,11 +16,11 @@ namespace CRUD.DAL.Entidades
 
    
 
-        public int IdCategoria
+        public int id_Categoria
         {
             get
             {
-                return _idCategoria;
+                return _id_Categoria;
             }
             set
             {
@@ -28,7 +28,7 @@ namespace CRUD.DAL.Entidades
                 {
                     throw new ArgumentException("Error: IdCategoria no debe de ser negativo");
                 }
-                _idCategoria = value;
+                _id_Categoria = value;
             }
             
             

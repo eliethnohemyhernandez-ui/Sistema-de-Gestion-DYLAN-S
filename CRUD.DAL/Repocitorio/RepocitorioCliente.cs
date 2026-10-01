@@ -27,9 +27,9 @@ namespace CRUD.DAL.Repocitorio
 
                         // Asignacion de valores a los Parametros de consusta
                         cmd.Parameters.AddWithValue("@Nombre", cliente.Nombre);
-                        cmd.Parameters.AddWithValue("@Apellido", cliente.Apellido);
-                        cmd.Parameters.AddWithValue("@Cedula", cliente.Cedula);
-                        
+                        cmd.Parameters.AddWithValue("@Telefono", cliente.Telefono);
+                        cmd.Parameters.AddWithValue("@Estado", cliente.Estado);
+
 
 
                         //Ejecutar el comando
@@ -68,11 +68,10 @@ namespace CRUD.DAL.Repocitorio
                     {
                         var cliente = new Cliente()
                         {
-                            IdCliente = (int)reader["id_Cliente"],
+                            id_Cliente = (int)reader["id_Cliente"],
                             Nombre = reader["Nombre"].ToString(),
-                            Apellido = reader["Apellido"].ToString(),
-                            Cedula = reader["Cedula"].ToString(),
-
+                            Telefono = reader["Telefono"].ToString(),
+                            Estado = (bool)reader["Estado"],
 
                         };
 
@@ -130,15 +129,15 @@ namespace CRUD.DAL.Repocitorio
                 using (SqlConnection connection = BDConexion.connect())
                 {
                     connection.Open();
-                    string sql = "UPDATE Cliente SET Nombre = @Nombre , Apellido = @Apellido, Cedula = @Cedula WHERE id_Cliente = @id_Cliente";
+                    string sql = "UPDATE Cliente SET Nombre = @Nombre , Telefono = @Telefono, Estado = @Estado WHERE id_Cliente = @id_Cliente";
                    
 
                     SqlCommand cmd = new SqlCommand(sql, connection);
 
                     cmd.Parameters.AddWithValue("@Nombre", cliente.Nombre);
-                    cmd.Parameters.AddWithValue("Apellido", cliente.Apellido);
-                    cmd.Parameters.AddWithValue("@Cedula", cliente.Cedula);
-                    cmd.Parameters.AddWithValue("@id_Cliente",cliente.IdCliente);
+                    cmd.Parameters.AddWithValue("@Telefono", cliente.Telefono);
+                    cmd.Parameters.AddWithValue("@Estado", cliente.Estado);
+                    cmd.Parameters.AddWithValue("@id_Cliente",cliente.id_Cliente);
 
                     cmd.ExecuteNonQuery();
 

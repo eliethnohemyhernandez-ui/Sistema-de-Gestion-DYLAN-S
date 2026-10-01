@@ -69,7 +69,7 @@ namespace CRUD.UI
             // Crear una instancia de Metodo
             Metodo metodo = new Metodo();
 
-            metodo.IdMetodo = ListaMetodo[indiceseleccionado].IdMetodo;
+            metodo.id_Metodo = ListaMetodo[indiceseleccionado].id_Metodo;
             metodo.Nombre = txtNombre.Text;
 
 
@@ -83,7 +83,7 @@ namespace CRUD.UI
 
         private void btnVerRegistro_Click(object sender, EventArgs e)
         {
-            ListaMetodo = _servicioMetodo.ObtenerList();
+            ListaMetodo = _servicioMetodo.ObtenerLista();
 
             //Alimentar la dat griGrid con la lista categoria
             dataGridView1.DataSource = null;
@@ -113,7 +113,7 @@ namespace CRUD.UI
                 _servicioMetodo.EliminarPorid(idMetodo);
 
                 // 5. Refrescamos 
-                ListaMetodo = _servicioMetodo.ObtenerList();
+                ListaMetodo = _servicioMetodo.ObtenerLista();
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = ListaMetodo;
 

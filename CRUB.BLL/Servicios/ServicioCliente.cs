@@ -28,7 +28,7 @@ namespace CRUB.BLL.Servicios
                 _Repocitorio.RegistrarLista(List);
             }
         }
-        public List<Cliente> ObtenerList()
+        public List<Cliente> ObtenerLista()
         {
             return _Repocitorio.ObtenerLista();
         }
@@ -45,7 +45,7 @@ namespace CRUB.BLL.Servicios
 
         public void Actualizar(Cliente cliente)
         {
-            if (string.IsNullOrEmpty(cliente.Nombre) || cliente.Apellido == null)
+            if (string.IsNullOrEmpty(cliente.Nombre) || cliente.Telefono == null)
             {
                 throw new Exception("No se admiten valores nulos en el Nombre Cliente y Apellido");
 

@@ -6,7 +6,7 @@ namespace CRUD.DAL.Entidades
 {
     public class Proveedores
     {
-        int _idProveedor;
+        int _id_Proveedor;
 
         public string Nombre { get; set; }
         public bool Estado { get; set; }
@@ -15,11 +15,11 @@ namespace CRUD.DAL.Entidades
         public string CreadoPor { get; set; }
 
 
-        public int IdProveedor
+        public int id_Proveedor
         {
             get
             {
-                return _idProveedor;
+                return _id_Proveedor;
             }
             set
             {
@@ -27,7 +27,7 @@ namespace CRUD.DAL.Entidades
                 {
                     throw new ArgumentException("Error: IdProveedor no debe de ser negativo");
                 }
-                _idProveedor = value;
+                _id_Proveedor = value;
             }
 
         }

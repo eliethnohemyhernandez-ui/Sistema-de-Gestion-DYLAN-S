@@ -36,13 +36,13 @@ namespace CRUD.UI
             //Cargar el combobox
             cmbCategoria.DataSource = _serviciocategoria.ObtenerListaActiva();
             cmbCategoria.DisplayMember = "Nombre";
-            cmbCategoria.ValueMember = "IdCategoria";
+            cmbCategoria.ValueMember = "id_Categoria";
 
 
             //Cargar el cmb Proveedor
             cmbProveedor.DataSource = _servicioProveedores.ObtenerProveedoresActivos();
             cmbProveedor.DisplayMember = "Nombre";
-            cmbProveedor.ValueMember = "IdProveedor";
+            cmbProveedor.ValueMember = "id_Proveedor";
 
 
 
@@ -146,7 +146,7 @@ namespace CRUD.UI
 
             dataGridView1.Columns["NombreCategoria"].Visible = true;
             dataGridView1.Columns["Empresa"].Visible = true;
-            dataGridView1.Columns["IdProducto"].Visible = false;
+            dataGridView1.Columns["id_Producto"].Visible = false;
             dataGridView1.Columns["Categoria"].Visible = false;
             dataGridView1.Columns["Proveedor"].Visible = false;
 
@@ -158,7 +158,7 @@ namespace CRUD.UI
             // Crear una instancia de categoria
             Producto producto = new Producto();
 
-            producto.IdProducto = ListaProducto[indiceseleccionado].IdProducto;
+            producto.id_Producto = ListaProducto[indiceseleccionado].id_Producto;
 
             producto.Nombre = txtNombre.Text;
             producto.Categoria = (int)cmbCategoria.SelectedValue;
@@ -201,7 +201,7 @@ namespace CRUD.UI
                 _servicioProducto.EliminarPorid(idProducto);
 
                 // 5. Refrescamos 
-                ListaProducto = _servicioProducto.ObtenerList();
+                ListaProducto = _servicioProducto.ObtenerListaActiva();
                 dataGridView1.DataSource = null;
 
 

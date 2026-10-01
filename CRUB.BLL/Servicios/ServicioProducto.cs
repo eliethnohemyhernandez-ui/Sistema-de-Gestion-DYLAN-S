@@ -28,13 +28,18 @@ namespace CRUB.BLL.Servicios
                 _RepositorioProducto.RegistrarLista(ListaProducto);
             
         }
-        public List<Producto> ObtenerList()
-        {
-            return _RepositorioProducto.ObtenerLista();
-        }
+        //public List<Producto> ObtenerList()
+        //{
+        //    return _RepositorioProducto.ObtenerLista();
+        //}
         public List<Producto> ObtenerListaActiva()
         {
             return _RepositorioProducto.ObtenerListaActiva();
+        }
+        
+        public int ObtenerStock(int id_Producto)
+        {
+            return _RepositorioProducto.ObtenerStock(id_Producto);
         }
 
         // VALIDACIONES DE NEGOCIO RELACIONADA A LA ELIMINACION DE UNA CATEGORIA

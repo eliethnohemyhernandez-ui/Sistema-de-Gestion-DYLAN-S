@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             btnEliminar = new Button();
             btnActualizar = new Button();
@@ -37,8 +37,8 @@
             label4 = new Label();
             txtNombre = new TextBox();
             label2 = new Label();
-            txtApellido = new TextBox();
-            txtCedula = new TextBox();
+            cbEstado = new TextBox();
+            txtTelefono = new TextBox();
             label3 = new Label();
             btnCancelar = new Button();
             btnAgregar = new Button();
@@ -116,8 +116,8 @@
             groupBox3.Controls.Add(label4);
             groupBox3.Controls.Add(txtNombre);
             groupBox3.Controls.Add(label2);
-            groupBox3.Controls.Add(txtApellido);
-            groupBox3.Controls.Add(txtCedula);
+            groupBox3.Controls.Add(cbEstado);
+            groupBox3.Controls.Add(txtTelefono);
             groupBox3.Controls.Add(label3);
             groupBox3.Controls.Add(btnCancelar);
             groupBox3.Controls.Add(btnAgregar);
@@ -160,27 +160,27 @@
             label2.TabIndex = 2;
             label2.Text = "Apellido";
             // 
-            // txtApellido
+            // cbEstado
             // 
-            txtApellido.BackColor = Color.FromArgb(32, 32, 32);
-            txtApellido.BorderStyle = BorderStyle.FixedSingle;
-            txtApellido.ForeColor = Color.White;
-            txtApellido.Location = new Point(574, 49);
-            txtApellido.Multiline = true;
-            txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(368, 38);
-            txtApellido.TabIndex = 8;
+            cbEstado.BackColor = Color.FromArgb(32, 32, 32);
+            cbEstado.BorderStyle = BorderStyle.FixedSingle;
+            cbEstado.ForeColor = Color.White;
+            cbEstado.Location = new Point(574, 49);
+            cbEstado.Multiline = true;
+            cbEstado.Name = "cbEstado";
+            cbEstado.Size = new Size(368, 38);
+            cbEstado.TabIndex = 8;
             // 
-            // txtCedula
+            // txtTelefono
             // 
-            txtCedula.BackColor = Color.FromArgb(32, 32, 32);
-            txtCedula.BorderStyle = BorderStyle.FixedSingle;
-            txtCedula.ForeColor = Color.White;
-            txtCedula.Location = new Point(1070, 49);
-            txtCedula.Multiline = true;
-            txtCedula.Name = "txtCedula";
-            txtCedula.Size = new Size(368, 37);
-            txtCedula.TabIndex = 9;
+            txtTelefono.BackColor = Color.FromArgb(32, 32, 32);
+            txtTelefono.BorderStyle = BorderStyle.FixedSingle;
+            txtTelefono.ForeColor = Color.White;
+            txtTelefono.Location = new Point(1070, 49);
+            txtTelefono.Multiline = true;
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(368, 37);
+            txtTelefono.TabIndex = 9;
             // 
             // label3
             // 
@@ -282,8 +282,8 @@
             dataGridView1.Location = new Point(22, 383);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.Size = new Size(1098, 378);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
@@ -339,8 +339,8 @@
         private Label label3;
         private Label label2;
         private DataGridView dataGridView1;
-        private TextBox txtCedula;
-        private TextBox txtApellido;
+        private TextBox txtTelefono;
+        private TextBox cbEstado;
         private TextBox txtNombre;
         private Button btnEliminar;
         private Button btnActualizar;

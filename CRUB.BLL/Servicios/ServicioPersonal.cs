@@ -28,7 +28,7 @@ namespace CRUB.BLL.Servicios
                 _Repositorio.RegistrarLista(List);
             }
         }
-        public List<Personal> ObtenerList()
+        public List<Personal> ObtenerLista()
         {
             return _Repositorio.ObtenerLista();
         }
