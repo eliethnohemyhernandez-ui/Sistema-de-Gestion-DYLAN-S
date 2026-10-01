@@ -33,10 +33,10 @@ namespace CRUD.UI
 
         public void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             label4 = new Label();
             btnAgregar = new Button();
@@ -61,9 +61,14 @@ namespace CRUD.UI
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(32, 32, 32);
+            groupBox1.Controls.Add(btnEliminar);
+            groupBox1.Controls.Add(btnActualizar);
+            groupBox1.Controls.Add(btnVerRegistro);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(btnAgregar);
+            groupBox1.Controls.Add(dataGridView1);
             groupBox1.Controls.Add(cmbEstado);
+            groupBox1.Controls.Add(btnRegistrar);
             groupBox1.Controls.Add(btnBuscar);
             groupBox1.Controls.Add(txtDescripcion);
             groupBox1.Controls.Add(txtBuscar);
@@ -75,7 +80,7 @@ namespace CRUD.UI
             groupBox1.ForeColor = Color.White;
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1463, 479);
+            groupBox1.Size = new Size(1463, 868);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Agregar Categoria";
@@ -84,7 +89,7 @@ namespace CRUD.UI
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.White;
-            label4.Location = new Point(320, 425);
+            label4.Location = new Point(325, 394);
             label4.Name = "label4";
             label4.Size = new Size(78, 25);
             label4.TabIndex = 18;
@@ -94,9 +99,9 @@ namespace CRUD.UI
             // 
             btnAgregar.BackColor = Color.Goldenrod;
             btnAgregar.ForeColor = Color.Black;
-            btnAgregar.Location = new Point(674, 278);
+            btnAgregar.Location = new Point(717, 233);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(133, 46);
+            btnAgregar.Size = new Size(148, 46);
             btnAgregar.TabIndex = 8;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
@@ -107,7 +112,7 @@ namespace CRUD.UI
             txtBuscar.BackColor = Color.FromArgb(32, 32, 32);
             txtBuscar.BorderStyle = BorderStyle.FixedSingle;
             txtBuscar.ForeColor = Color.White;
-            txtBuscar.Location = new Point(421, 423);
+            txtBuscar.Location = new Point(429, 380);
             txtBuscar.Multiline = true;
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(656, 39);
@@ -163,7 +168,7 @@ namespace CRUD.UI
             // 
             btnBuscar.BackColor = Color.Goldenrod;
             btnBuscar.ForeColor = Color.Black;
-            btnBuscar.Location = new Point(1083, 425);
+            btnBuscar.Location = new Point(1091, 382);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(153, 37);
             btnBuscar.TabIndex = 15;
@@ -183,9 +188,9 @@ namespace CRUD.UI
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = Color.Goldenrod;
+            btnCancelar.BackColor = Color.Silver;
             btnCancelar.ForeColor = Color.Black;
-            btnCancelar.Location = new Point(839, 278);
+            btnCancelar.Location = new Point(901, 233);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(130, 46);
             btnCancelar.TabIndex = 2;
@@ -207,7 +212,7 @@ namespace CRUD.UI
             // 
             btnEliminar.BackColor = Color.Goldenrod;
             btnEliminar.ForeColor = Color.Black;
-            btnEliminar.Location = new Point(1239, 750);
+            btnEliminar.Location = new Point(1132, 765);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(112, 34);
             btnEliminar.TabIndex = 4;
@@ -219,7 +224,7 @@ namespace CRUD.UI
             // 
             btnVerRegistro.BackColor = Color.Goldenrod;
             btnVerRegistro.ForeColor = Color.Black;
-            btnVerRegistro.Location = new Point(1210, 674);
+            btnVerRegistro.Location = new Point(248, 755);
             btnVerRegistro.Name = "btnVerRegistro";
             btnVerRegistro.Size = new Size(112, 34);
             btnVerRegistro.TabIndex = 6;
@@ -231,44 +236,44 @@ namespace CRUD.UI
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.ForeColor = Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(128, 64, 0);
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(128, 64, 0);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.NullValue = null;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(128, 64, 0);
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(128, 64, 0);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.Window;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle7.ForeColor = Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(128, 64, 0);
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(128, 64, 0);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.White;
-            dataGridView1.Location = new Point(21, 732);
+            dataGridView1.Location = new Point(234, 457);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 62;
-            dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            dataGridView1.Size = new Size(798, 107);
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridView1.Size = new Size(1140, 292);
             dataGridView1.TabIndex = 7;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellContentDoubleClick += dataGridView1_CellContentDoubleClick;
@@ -279,7 +284,7 @@ namespace CRUD.UI
             btnActualizar.BackColor = Color.Goldenrod;
             btnActualizar.BackgroundImageLayout = ImageLayout.Center;
             btnActualizar.ForeColor = Color.Black;
-            btnActualizar.Location = new Point(1210, 613);
+            btnActualizar.Location = new Point(1250, 765);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(112, 34);
             btnActualizar.TabIndex = 3;
@@ -291,9 +296,9 @@ namespace CRUD.UI
             // 
             btnRegistrar.BackColor = Color.Goldenrod;
             btnRegistrar.ForeColor = Color.Black;
-            btnRegistrar.Location = new Point(1210, 532);
+            btnRegistrar.Location = new Point(1064, 233);
             btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(112, 34);
+            btnRegistrar.Size = new Size(149, 46);
             btnRegistrar.TabIndex = 5;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = false;
@@ -303,12 +308,7 @@ namespace CRUD.UI
             // 
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(1498, 913);
-            Controls.Add(btnActualizar);
-            Controls.Add(btnEliminar);
-            Controls.Add(btnVerRegistro);
-            Controls.Add(btnRegistrar);
             Controls.Add(groupBox1);
-            Controls.Add(dataGridView1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MdiChildrenMinimizedAnchorBottom = false;
             Name = "frmCategoria";

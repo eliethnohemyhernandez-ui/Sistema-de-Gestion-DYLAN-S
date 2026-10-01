@@ -58,20 +58,20 @@ namespace CRUD.DAL.Repocitorio
             using (SqlConnection connection = BDConexion.connect())
             {
                 connection.Open();
-                string sql = @"SELECT * FROM Usuario WHERE NombreUsuario = @Nombre AND Contraseña = @Contraseña";
+                string sql = @"SELECT * FROM Usuario WHERE NombreUsuario = @NombreUsuario AND Contraseña_Hash = @Contraseña_Hash";
                 SqlCommand cmd = new SqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@Nombre"
+                cmd.Parameters.AddWithValue("@NombreUsuario"
                 , Nombre);
-                cmd.Parameters.AddWithValue("@Contraseña"
+                cmd.Parameters.AddWithValue("@Contraseña_Hash"
                 , contraseña);
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
                     usuario = new Usuario
                     {
-                        IdUsuario = Convert.ToInt32(reader["id_usuario"]),
+                        IdUsuario = Convert.ToInt32(reader["id_Usuario"]),
                        Nombre = reader["NombreUsuario"].ToString(),
-                        id_Rol = Convert.ToInt32(reader["id_rol"]),
+                        id_Rol = Convert.ToInt32(reader["id_Rol"]),
                     };
                 }
             }

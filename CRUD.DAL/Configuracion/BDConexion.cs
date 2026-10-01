@@ -7,7 +7,8 @@ namespace CRUD.DAL.Configuracion
 {
     internal class BDConexion
     {
-        private static string ConnectionString = "Server=DESKTOP-FCVSIDG\\SQLEXPRESS;Database=INVT;Trusted_Connection=true;TrustServerCertificate=True";
+        private static string ConnectionString = "Data Source=localhost;Initial Catalog=RAFLABD;Integrated Security=True;Trust Server Certificate=True";
+
 
 
 

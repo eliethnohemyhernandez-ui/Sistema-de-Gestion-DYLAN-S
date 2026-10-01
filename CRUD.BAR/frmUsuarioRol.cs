@@ -109,7 +109,7 @@ namespace CRUD.UI
             }
 
 
-            int idRol= Convert.ToInt32(dataGridView1.CurrentRow.Cells["IdRol"].Value);
+            int idRol = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IdRol"].Value);
 
 
             DialogResult resultado = MessageBox.Show("¿Está seguro de desactivar el registro?", "Eliminación", MessageBoxButtons.YesNo);
@@ -136,10 +136,15 @@ namespace CRUD.UI
 
             txtNombre.Text = ListaUsuarioRol[indiceSeleccionado].Nombre.ToString();
             txtDescripcion.Text = ListaUsuarioRol[indiceSeleccionado].Descripcion.ToString();
-            
+
             if (ListaUsuarioRol[indiceSeleccionado].Estado == true)
                 cmbEstado.Text = "Activo";
             else cmbEstado.Text = "Inactivo";
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

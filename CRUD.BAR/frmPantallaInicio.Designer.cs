@@ -48,7 +48,6 @@
             panelMenuIzquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelBarraSuperior.SuspendLayout();
-            panelContenedorPrincipal.SuspendLayout();
             SuspendLayout();
             // 
             // panelMenuIzquierdo
@@ -259,6 +258,7 @@
             // panelBarraSuperior
             // 
             panelBarraSuperior.BackColor = Color.FromArgb(24, 24, 24);
+            panelBarraSuperior.Controls.Add(btnMasOpciones);
             panelBarraSuperior.Controls.Add(label2);
             panelBarraSuperior.Controls.Add(label1);
             panelBarraSuperior.Location = new Point(405, 3);
@@ -291,7 +291,6 @@
             // panelContenedorPrincipal
             // 
             panelContenedorPrincipal.BackColor = Color.FromArgb(43, 29, 20);
-            panelContenedorPrincipal.Controls.Add(btnMasOpciones);
             panelContenedorPrincipal.Location = new Point(405, 92);
             panelContenedorPrincipal.Name = "panelContenedorPrincipal";
             panelContenedorPrincipal.Size = new Size(1537, 952);
@@ -308,9 +307,9 @@
             btnMasOpciones.Font = new Font("Arial Narrow", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnMasOpciones.ForeColor = Color.DarkGoldenrod;
             btnMasOpciones.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMasOpciones.Location = new Point(1264, 812);
+            btnMasOpciones.Location = new Point(1297, 23);
             btnMasOpciones.Name = "btnMasOpciones";
-            btnMasOpciones.Size = new Size(183, 56);
+            btnMasOpciones.Size = new Size(167, 44);
             btnMasOpciones.TabIndex = 15;
             btnMasOpciones.Text = "Mas Opiones";
             btnMasOpciones.TextAlign = ContentAlignment.MiddleLeft;
@@ -340,7 +339,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelBarraSuperior.ResumeLayout(false);
             panelBarraSuperior.PerformLayout();
-            panelContenedorPrincipal.ResumeLayout(false);
             ResumeLayout(false);
         }
 
