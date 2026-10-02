@@ -42,40 +42,45 @@
             btnVer = new Button();
             btnActualizar = new Button();
             btnEliminar = new Button();
-            groupBox1 = new GroupBox();
-            label8 = new Label();
             label9 = new Label();
             btnBuscar = new Button();
             textBox1 = new TextBox();
             groupPersonales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupPersonales
             // 
             groupPersonales.BackColor = Color.FromArgb(32, 32, 32);
+            groupPersonales.Controls.Add(btnBuscar);
+            groupPersonales.Controls.Add(label9);
+            groupPersonales.Controls.Add(textBox1);
             groupPersonales.Controls.Add(btnCancelar);
+            groupPersonales.Controls.Add(btnActualizar);
+            groupPersonales.Controls.Add(btnEliminar);
             groupPersonales.Controls.Add(btnAgregar);
             groupPersonales.Controls.Add(txtDescripcion);
+            groupPersonales.Controls.Add(btnVer);
             groupPersonales.Controls.Add(txtNombre);
+            groupPersonales.Controls.Add(dataGridView1);
+            groupPersonales.Controls.Add(btnRegistrar);
             groupPersonales.Controls.Add(cmbEstado);
             groupPersonales.Controls.Add(label3);
             groupPersonales.Controls.Add(label2);
             groupPersonales.Controls.Add(label1);
             groupPersonales.ForeColor = Color.White;
-            groupPersonales.Location = new Point(16, 129);
+            groupPersonales.Location = new Point(16, 12);
             groupPersonales.Name = "groupPersonales";
-            groupPersonales.Size = new Size(1462, 311);
+            groupPersonales.Size = new Size(1462, 895);
             groupPersonales.TabIndex = 9;
             groupPersonales.TabStop = false;
             groupPersonales.Text = "Datos Personales";
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = Color.DarkGoldenrod;
+            btnCancelar.BackColor = Color.Silver;
             btnCancelar.ForeColor = Color.Black;
-            btnCancelar.Location = new Point(663, 216);
+            btnCancelar.Location = new Point(762, 239);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(131, 44);
             btnCancelar.TabIndex = 17;
@@ -87,7 +92,7 @@
             // 
             btnAgregar.BackColor = Color.DarkGoldenrod;
             btnAgregar.ForeColor = Color.Black;
-            btnAgregar.Location = new Point(440, 226);
+            btnAgregar.Location = new Point(583, 239);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(136, 44);
             btnAgregar.TabIndex = 16;
@@ -97,31 +102,31 @@
             // 
             // txtDescripcion
             // 
-            txtDescripcion.BackColor = Color.FromArgb(32, 32, 32);
+            txtDescripcion.BackColor = Color.White;
             txtDescripcion.BorderStyle = BorderStyle.FixedSingle;
-            txtDescripcion.ForeColor = Color.White;
+            txtDescripcion.ForeColor = Color.Black;
             txtDescripcion.Location = new Point(941, 50);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(385, 210);
+            txtDescripcion.Size = new Size(385, 172);
             txtDescripcion.TabIndex = 6;
             // 
             // txtNombre
             // 
-            txtNombre.BackColor = Color.FromArgb(32, 32, 32);
+            txtNombre.BackColor = Color.White;
             txtNombre.BorderStyle = BorderStyle.FixedSingle;
-            txtNombre.Location = new Point(116, 50);
+            txtNombre.Location = new Point(201, 50);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(408, 31);
             txtNombre.TabIndex = 5;
             // 
             // cmbEstado
             // 
-            cmbEstado.BackColor = Color.FromArgb(32, 32, 32);
-            cmbEstado.ForeColor = Color.White;
+            cmbEstado.BackColor = Color.White;
+            cmbEstado.ForeColor = Color.Black;
             cmbEstado.FormattingEnabled = true;
             cmbEstado.Items.AddRange(new object[] { "Activo", "Inactivo" });
-            cmbEstado.Location = new Point(116, 131);
+            cmbEstado.Location = new Point(201, 116);
             cmbEstado.Name = "cmbEstado";
             cmbEstado.Size = new Size(408, 33);
             cmbEstado.TabIndex = 4;
@@ -130,7 +135,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.White;
-            label3.Location = new Point(40, 158);
+            label3.Location = new Point(114, 124);
             label3.Name = "label3";
             label3.Size = new Size(70, 25);
             label3.TabIndex = 2;
@@ -150,7 +155,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.White;
-            label1.Location = new Point(28, 50);
+            label1.Location = new Point(102, 50);
             label1.Name = "label1";
             label1.Size = new Size(82, 25);
             label1.TabIndex = 0;
@@ -160,10 +165,10 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.Menu;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(16, 471);
+            dataGridView1.Location = new Point(238, 402);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1053, 357);
+            dataGridView1.Size = new Size(1124, 334);
             dataGridView1.TabIndex = 12;
             dataGridView1.CellContentDoubleClick += dataGridView1_CellContentDoubleClick;
             // 
@@ -171,7 +176,7 @@
             // 
             btnRegistrar.BackColor = Color.DarkGoldenrod;
             btnRegistrar.ForeColor = Color.Black;
-            btnRegistrar.Location = new Point(1089, 520);
+            btnRegistrar.Location = new Point(1123, 742);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(112, 46);
             btnRegistrar.TabIndex = 13;
@@ -183,7 +188,7 @@
             // 
             btnVer.BackColor = Color.DarkGoldenrod;
             btnVer.ForeColor = Color.Black;
-            btnVer.Location = new Point(1089, 688);
+            btnVer.Location = new Point(263, 754);
             btnVer.Name = "btnVer";
             btnVer.Size = new Size(112, 41);
             btnVer.TabIndex = 17;
@@ -195,9 +200,9 @@
             // 
             btnActualizar.BackColor = Color.DarkGoldenrod;
             btnActualizar.ForeColor = Color.Black;
-            btnActualizar.Location = new Point(44, 847);
+            btnActualizar.Location = new Point(1250, 742);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(112, 34);
+            btnActualizar.Size = new Size(112, 40);
             btnActualizar.TabIndex = 18;
             btnActualizar.Text = "Actualizar";
             btnActualizar.UseVisualStyleBackColor = false;
@@ -205,9 +210,9 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.BackColor = Color.DarkGoldenrod;
+            btnEliminar.BackColor = Color.Silver;
             btnEliminar.ForeColor = Color.Black;
-            btnEliminar.Location = new Point(926, 847);
+            btnEliminar.Location = new Point(412, 754);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(112, 34);
             btnEliminar.TabIndex = 19;
@@ -215,37 +220,12 @@
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // groupBox1
-            // 
-            groupBox1.BackColor = Color.FromArgb(32, 32, 32);
-            groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(btnBuscar);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(16, 2);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1462, 121);
-            groupBox1.TabIndex = 20;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Consultas";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.ForeColor = Color.Silver;
-            label8.Location = new Point(403, 39);
-            label8.Name = "label8";
-            label8.Size = new Size(97, 25);
-            label8.TabIndex = 17;
-            label8.Text = "Buscar rol..";
-            // 
             // label9
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.White;
             label9.ImageAlign = ContentAlignment.MiddleLeft;
-            label9.Location = new Point(305, 39);
+            label9.Location = new Point(407, 323);
             label9.Name = "label9";
             label9.Size = new Size(78, 25);
             label9.TabIndex = 16;
@@ -255,7 +235,7 @@
             // 
             btnBuscar.BackColor = Color.DarkGoldenrod;
             btnBuscar.ForeColor = Color.Black;
-            btnBuscar.Location = new Point(910, 30);
+            btnBuscar.Location = new Point(1224, 323);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(102, 34);
             btnBuscar.TabIndex = 15;
@@ -264,14 +244,15 @@
             // 
             // textBox1
             // 
-            textBox1.BackColor = Color.FromArgb(32, 32, 32);
+            textBox1.BackColor = Color.White;
             textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(389, 33);
+            textBox1.ForeColor = Color.Black;
+            textBox1.Location = new Point(491, 321);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(493, 41);
+            textBox1.Size = new Size(714, 41);
             textBox1.TabIndex = 13;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // frmUsuarioRol
             // 
@@ -279,12 +260,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(1490, 935);
-            Controls.Add(groupBox1);
-            Controls.Add(btnEliminar);
-            Controls.Add(btnActualizar);
-            Controls.Add(btnVer);
-            Controls.Add(btnRegistrar);
-            Controls.Add(dataGridView1);
             Controls.Add(groupPersonales);
             Name = "frmUsuarioRol";
             Text = "frmUsuarioRol";
@@ -292,8 +267,6 @@
             groupPersonales.ResumeLayout(false);
             groupPersonales.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -313,8 +286,6 @@
         private Button btnVer;
         private Button btnActualizar;
         private Button btnEliminar;
-        private GroupBox groupBox1;
-        private Label label8;
         private Label label9;
         private Button btnBuscar;
         private TextBox textBox1;

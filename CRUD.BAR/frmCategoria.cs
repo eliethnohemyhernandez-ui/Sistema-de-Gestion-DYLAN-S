@@ -61,21 +61,26 @@ namespace CRUD.UI
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(32, 32, 32);
+            groupBox1.Controls.Add(btnEliminar);
+            groupBox1.Controls.Add(btnActualizar);
+            groupBox1.Controls.Add(btnVerRegistro);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(btnAgregar);
-            groupBox1.Controls.Add(txtBuscar);
+            groupBox1.Controls.Add(dataGridView1);
             groupBox1.Controls.Add(cmbEstado);
+            groupBox1.Controls.Add(btnRegistrar);
+            groupBox1.Controls.Add(btnBuscar);
             groupBox1.Controls.Add(txtDescripcion);
+            groupBox1.Controls.Add(txtBuscar);
             groupBox1.Controls.Add(txtNombreCategoria);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(btnBuscar);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(btnCancelar);
             groupBox1.Controls.Add(label1);
             groupBox1.ForeColor = Color.White;
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1463, 403);
+            groupBox1.Size = new Size(1463, 868);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Agregar Categoria";
@@ -84,7 +89,7 @@ namespace CRUD.UI
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.White;
-            label4.Location = new Point(253, 49);
+            label4.Location = new Point(325, 394);
             label4.Name = "label4";
             label4.Size = new Size(78, 25);
             label4.TabIndex = 18;
@@ -94,9 +99,9 @@ namespace CRUD.UI
             // 
             btnAgregar.BackColor = Color.Goldenrod;
             btnAgregar.ForeColor = Color.Black;
-            btnAgregar.Location = new Point(488, 330);
+            btnAgregar.Location = new Point(717, 233);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(133, 46);
+            btnAgregar.Size = new Size(148, 46);
             btnAgregar.TabIndex = 8;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
@@ -107,7 +112,7 @@ namespace CRUD.UI
             txtBuscar.BackColor = Color.FromArgb(32, 32, 32);
             txtBuscar.BorderStyle = BorderStyle.FixedSingle;
             txtBuscar.ForeColor = Color.White;
-            txtBuscar.Location = new Point(337, 47);
+            txtBuscar.Location = new Point(429, 380);
             txtBuscar.Multiline = true;
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(656, 39);
@@ -115,37 +120,37 @@ namespace CRUD.UI
             // 
             // cmbEstado
             // 
-            cmbEstado.BackColor = Color.FromArgb(32, 32, 32);
+            cmbEstado.BackColor = Color.White;
             cmbEstado.FlatStyle = FlatStyle.System;
             cmbEstado.Font = new Font("Segoe UI", 9F);
-            cmbEstado.ForeColor = Color.White;
+            cmbEstado.ForeColor = Color.Black;
             cmbEstado.FormattingEnabled = true;
             cmbEstado.Items.AddRange(new object[] { "Activa", "Inactiva" });
-            cmbEstado.Location = new Point(196, 223);
+            cmbEstado.Location = new Point(102, 147);
             cmbEstado.Name = "cmbEstado";
-            cmbEstado.Size = new Size(308, 33);
+            cmbEstado.Size = new Size(364, 33);
             cmbEstado.TabIndex = 5;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.BackColor = Color.FromArgb(32, 32, 32);
+            txtDescripcion.BackColor = Color.White;
             txtDescripcion.BorderStyle = BorderStyle.FixedSingle;
-            txtDescripcion.ForeColor = Color.White;
-            txtDescripcion.Location = new Point(764, 118);
+            txtDescripcion.ForeColor = Color.Black;
+            txtDescripcion.Location = new Point(772, 52);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(374, 179);
+            txtDescripcion.Size = new Size(374, 123);
             txtDescripcion.TabIndex = 4;
             // 
             // txtNombreCategoria
             // 
-            txtNombreCategoria.BackColor = Color.FromArgb(32, 32, 32);
+            txtNombreCategoria.BackColor = Color.White;
             txtNombreCategoria.BorderStyle = BorderStyle.FixedSingle;
-            txtNombreCategoria.ForeColor = Color.White;
-            txtNombreCategoria.Location = new Point(205, 142);
+            txtNombreCategoria.ForeColor = Color.Black;
+            txtNombreCategoria.Location = new Point(102, 67);
             txtNombreCategoria.Multiline = true;
             txtNombreCategoria.Name = "txtNombreCategoria";
-            txtNombreCategoria.Size = new Size(308, 38);
+            txtNombreCategoria.Size = new Size(364, 38);
             txtNombreCategoria.TabIndex = 3;
             txtNombreCategoria.TextChanged += txtNombreCategoria_TextChanged;
             // 
@@ -153,7 +158,7 @@ namespace CRUD.UI
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.White;
-            label3.Location = new Point(63, 231);
+            label3.Location = new Point(25, 150);
             label3.Name = "label3";
             label3.Size = new Size(66, 25);
             label3.TabIndex = 2;
@@ -163,7 +168,7 @@ namespace CRUD.UI
             // 
             btnBuscar.BackColor = Color.Goldenrod;
             btnBuscar.ForeColor = Color.Black;
-            btnBuscar.Location = new Point(1066, 49);
+            btnBuscar.Location = new Point(1091, 382);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(153, 37);
             btnBuscar.TabIndex = 15;
@@ -175,7 +180,7 @@ namespace CRUD.UI
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(654, 129);
+            label2.Location = new Point(662, 54);
             label2.Name = "label2";
             label2.Size = new Size(104, 25);
             label2.TabIndex = 1;
@@ -183,9 +188,9 @@ namespace CRUD.UI
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = Color.Goldenrod;
+            btnCancelar.BackColor = Color.Silver;
             btnCancelar.ForeColor = Color.Black;
-            btnCancelar.Location = new Point(714, 330);
+            btnCancelar.Location = new Point(901, 233);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(130, 46);
             btnCancelar.TabIndex = 2;
@@ -197,17 +202,17 @@ namespace CRUD.UI
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.White;
-            label1.Location = new Point(13, 144);
+            label1.Location = new Point(25, 69);
             label1.Name = "label1";
-            label1.Size = new Size(181, 25);
+            label1.Size = new Size(83, 25);
             label1.TabIndex = 0;
-            label1.Text = "Nombre de categoria";
+            label1.Text = "Nombre ";
             // 
             // btnEliminar
             // 
             btnEliminar.BackColor = Color.Goldenrod;
             btnEliminar.ForeColor = Color.Black;
-            btnEliminar.Location = new Point(1044, 857);
+            btnEliminar.Location = new Point(1132, 765);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(112, 34);
             btnEliminar.TabIndex = 4;
@@ -219,7 +224,7 @@ namespace CRUD.UI
             // 
             btnVerRegistro.BackColor = Color.Goldenrod;
             btnVerRegistro.ForeColor = Color.Black;
-            btnVerRegistro.Location = new Point(1210, 674);
+            btnVerRegistro.Location = new Point(248, 755);
             btnVerRegistro.Name = "btnVerRegistro";
             btnVerRegistro.Size = new Size(112, 34);
             btnVerRegistro.TabIndex = 6;
@@ -252,14 +257,14 @@ namespace CRUD.UI
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.ForeColor = Color.White;
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(128, 64, 0);
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.White;
-            dataGridView1.Location = new Point(21, 435);
+            dataGridView1.Location = new Point(234, 457);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 62;
@@ -268,7 +273,7 @@ namespace CRUD.UI
             dataGridViewCellStyle4.SelectionBackColor = Color.White;
             dataGridViewCellStyle4.SelectionForeColor = Color.Black;
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridView1.Size = new Size(1125, 404);
+            dataGridView1.Size = new Size(1140, 292);
             dataGridView1.TabIndex = 7;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellContentDoubleClick += dataGridView1_CellContentDoubleClick;
@@ -279,7 +284,7 @@ namespace CRUD.UI
             btnActualizar.BackColor = Color.Goldenrod;
             btnActualizar.BackgroundImageLayout = ImageLayout.Center;
             btnActualizar.ForeColor = Color.Black;
-            btnActualizar.Location = new Point(75, 857);
+            btnActualizar.Location = new Point(1250, 765);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(112, 34);
             btnActualizar.TabIndex = 3;
@@ -291,9 +296,9 @@ namespace CRUD.UI
             // 
             btnRegistrar.BackColor = Color.Goldenrod;
             btnRegistrar.ForeColor = Color.Black;
-            btnRegistrar.Location = new Point(1210, 532);
+            btnRegistrar.Location = new Point(1064, 233);
             btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(112, 34);
+            btnRegistrar.Size = new Size(149, 46);
             btnRegistrar.TabIndex = 5;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = false;
@@ -303,12 +308,7 @@ namespace CRUD.UI
             // 
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(1498, 913);
-            Controls.Add(btnActualizar);
-            Controls.Add(btnEliminar);
-            Controls.Add(btnVerRegistro);
-            Controls.Add(btnRegistrar);
             Controls.Add(groupBox1);
-            Controls.Add(dataGridView1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MdiChildrenMinimizedAnchorBottom = false;
             Name = "frmCategoria";

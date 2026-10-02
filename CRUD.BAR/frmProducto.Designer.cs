@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             btnActualizar = new Button();
             btnVer = new Button();
@@ -67,34 +67,38 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(32, 32, 32);
-            groupBox1.Controls.Add(btnActualizar);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(nmStockMinimo);
             groupBox1.Controls.Add(btnVer);
-            groupBox1.Controls.Add(btnEliminar);
-            groupBox1.Controls.Add(btnRegistra);
+            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(txtStock);
             groupBox1.Controls.Add(btnAgreagar);
+            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(btnRegistra);
             groupBox1.Controls.Add(btnLimpiar);
+            groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(btnActualizar);
             groupBox1.Controls.Add(cmbEstado);
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(cmbProveedor);
-            groupBox1.Controls.Add(nmStockMinimo);
             groupBox1.Controls.Add(cmbCategoria);
-            groupBox1.Controls.Add(txtStock);
+            groupBox1.Controls.Add(btnEliminar);
             groupBox1.Controls.Add(txtPrecio);
             groupBox1.Controls.Add(txtGrado);
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(txtContenido);
             groupBox1.Controls.Add(txtNombre);
-            groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(btnBuscar);
             groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(dataGridView1);
             groupBox1.Controls.Add(label2);
             groupBox1.ForeColor = Color.White;
             groupBox1.Location = new Point(6, 18);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(514, 831);
+            groupBox1.Size = new Size(1459, 835);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Agregar Producto";
@@ -103,7 +107,7 @@
             // 
             btnActualizar.BackColor = Color.DarkGoldenrod;
             btnActualizar.ForeColor = Color.Black;
-            btnActualizar.Location = new Point(359, 552);
+            btnActualizar.Location = new Point(1179, 618);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(112, 34);
             btnActualizar.TabIndex = 4;
@@ -115,7 +119,7 @@
             // 
             btnVer.BackColor = Color.DarkGoldenrod;
             btnVer.ForeColor = SystemColors.ActiveCaptionText;
-            btnVer.Location = new Point(191, 708);
+            btnVer.Location = new Point(569, 629);
             btnVer.Name = "btnVer";
             btnVer.Size = new Size(112, 34);
             btnVer.TabIndex = 5;
@@ -125,9 +129,9 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.BackColor = Color.DarkGoldenrod;
+            btnEliminar.BackColor = Color.Silver;
             btnEliminar.ForeColor = Color.Black;
-            btnEliminar.Location = new Point(220, 597);
+            btnEliminar.Location = new Point(1297, 618);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(112, 34);
             btnEliminar.TabIndex = 3;
@@ -139,7 +143,7 @@
             // 
             btnRegistra.BackColor = Color.DarkGoldenrod;
             btnRegistra.ForeColor = SystemColors.ActiveCaptionText;
-            btnRegistra.Location = new Point(334, 719);
+            btnRegistra.Location = new Point(371, 778);
             btnRegistra.Name = "btnRegistra";
             btnRegistra.Size = new Size(112, 34);
             btnRegistra.TabIndex = 4;
@@ -151,7 +155,7 @@
             // 
             btnAgreagar.BackColor = Color.DarkGoldenrod;
             btnAgreagar.ForeColor = Color.Black;
-            btnAgreagar.Location = new Point(83, 759);
+            btnAgreagar.Location = new Point(85, 778);
             btnAgreagar.Name = "btnAgreagar";
             btnAgreagar.Size = new Size(112, 34);
             btnAgreagar.TabIndex = 2;
@@ -161,9 +165,9 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.BackColor = Color.DarkGoldenrod;
+            btnLimpiar.BackColor = Color.Silver;
             btnLimpiar.ForeColor = SystemColors.ActiveCaptionText;
-            btnLimpiar.Location = new Point(298, 759);
+            btnLimpiar.Location = new Point(218, 778);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(112, 34);
             btnLimpiar.TabIndex = 3;
@@ -175,28 +179,29 @@
             // 
             label10.AutoSize = true;
             label10.ForeColor = Color.White;
-            label10.Location = new Point(42, 220);
+            label10.Location = new Point(96, 236);
             label10.Name = "label10";
             label10.Size = new Size(66, 25);
             label10.TabIndex = 13;
             label10.Text = "Estado";
+            label10.Click += label10_Click;
             // 
             // cmbEstado
             // 
-            cmbEstado.BackColor = Color.FromArgb(32, 32, 32);
-            cmbEstado.ForeColor = Color.White;
+            cmbEstado.BackColor = Color.White;
+            cmbEstado.ForeColor = Color.Black;
             cmbEstado.FormattingEnabled = true;
             cmbEstado.Items.AddRange(new object[] { "Activa", "Inactiva" });
-            cmbEstado.Location = new Point(145, 217);
+            cmbEstado.Location = new Point(190, 236);
             cmbEstado.Name = "cmbEstado";
-            cmbEstado.Size = new Size(333, 33);
+            cmbEstado.Size = new Size(309, 33);
             cmbEstado.TabIndex = 12;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.White;
-            label9.Location = new Point(18, 309);
+            label9.Location = new Point(51, 314);
             label9.Name = "label9";
             label9.Size = new Size(111, 25);
             label9.TabIndex = 11;
@@ -204,90 +209,90 @@
             // 
             // cmbProveedor
             // 
-            cmbProveedor.BackColor = Color.FromArgb(32, 32, 32);
-            cmbProveedor.ForeColor = Color.White;
+            cmbProveedor.BackColor = Color.White;
+            cmbProveedor.ForeColor = Color.Black;
             cmbProveedor.FormattingEnabled = true;
-            cmbProveedor.Location = new Point(141, 309);
+            cmbProveedor.Location = new Point(189, 306);
             cmbProveedor.Name = "cmbProveedor";
-            cmbProveedor.Size = new Size(333, 33);
+            cmbProveedor.Size = new Size(309, 33);
             cmbProveedor.TabIndex = 10;
             // 
             // nmStockMinimo
             // 
-            nmStockMinimo.BackColor = Color.FromArgb(32, 32, 32);
+            nmStockMinimo.BackColor = Color.White;
             nmStockMinimo.BorderStyle = BorderStyle.FixedSingle;
-            nmStockMinimo.ForeColor = Color.White;
-            nmStockMinimo.Location = new Point(289, 646);
+            nmStockMinimo.ForeColor = Color.Black;
+            nmStockMinimo.Location = new Point(190, 697);
             nmStockMinimo.Name = "nmStockMinimo";
-            nmStockMinimo.Size = new Size(191, 31);
+            nmStockMinimo.Size = new Size(309, 31);
             nmStockMinimo.TabIndex = 9;
             // 
             // cmbCategoria
             // 
-            cmbCategoria.BackColor = Color.FromArgb(32, 32, 32);
-            cmbCategoria.ForeColor = Color.White;
+            cmbCategoria.BackColor = Color.White;
+            cmbCategoria.ForeColor = Color.Black;
             cmbCategoria.FormattingEnabled = true;
-            cmbCategoria.Location = new Point(144, 136);
+            cmbCategoria.Location = new Point(189, 159);
             cmbCategoria.Name = "cmbCategoria";
-            cmbCategoria.Size = new Size(333, 33);
+            cmbCategoria.Size = new Size(309, 33);
             cmbCategoria.TabIndex = 8;
             // 
             // txtStock
             // 
-            txtStock.BackColor = Color.FromArgb(32, 32, 32);
+            txtStock.BackColor = Color.White;
             txtStock.BorderStyle = BorderStyle.FixedSingle;
-            txtStock.ForeColor = Color.White;
-            txtStock.Location = new Point(42, 637);
+            txtStock.ForeColor = Color.Black;
+            txtStock.Location = new Point(189, 618);
             txtStock.Name = "txtStock";
-            txtStock.Size = new Size(188, 31);
+            txtStock.Size = new Size(309, 31);
             txtStock.TabIndex = 3;
             // 
             // txtPrecio
             // 
-            txtPrecio.BackColor = Color.FromArgb(32, 32, 32);
+            txtPrecio.BackColor = Color.White;
             txtPrecio.BorderStyle = BorderStyle.FixedSingle;
-            txtPrecio.ForeColor = Color.White;
-            txtPrecio.Location = new Point(289, 515);
+            txtPrecio.ForeColor = Color.Black;
+            txtPrecio.Location = new Point(190, 541);
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(189, 31);
+            txtPrecio.Size = new Size(309, 31);
             txtPrecio.TabIndex = 4;
             txtPrecio.TextChanged += txtPrecio_TextChanged;
             // 
             // txtGrado
             // 
-            txtGrado.BackColor = Color.FromArgb(32, 32, 32);
+            txtGrado.BackColor = Color.White;
             txtGrado.BorderStyle = BorderStyle.FixedSingle;
-            txtGrado.ForeColor = Color.White;
-            txtGrado.Location = new Point(42, 512);
+            txtGrado.ForeColor = Color.Black;
+            txtGrado.Location = new Point(189, 462);
             txtGrado.Name = "txtGrado";
-            txtGrado.Size = new Size(188, 31);
+            txtGrado.Size = new Size(309, 31);
             txtGrado.TabIndex = 5;
             // 
             // txtContenido
             // 
-            txtContenido.BackColor = Color.FromArgb(32, 32, 32);
+            txtContenido.BackColor = Color.White;
             txtContenido.BorderStyle = BorderStyle.FixedSingle;
-            txtContenido.ForeColor = Color.White;
-            txtContenido.Location = new Point(138, 387);
+            txtContenido.ForeColor = Color.Black;
+            txtContenido.Location = new Point(189, 383);
             txtContenido.Name = "txtContenido";
-            txtContenido.Size = new Size(333, 31);
+            txtContenido.Size = new Size(309, 31);
             txtContenido.TabIndex = 6;
             // 
             // txtNombre
             // 
-            txtNombre.BackColor = Color.FromArgb(32, 32, 32);
+            txtNombre.BackColor = Color.White;
             txtNombre.BorderStyle = BorderStyle.FixedSingle;
-            txtNombre.ForeColor = Color.White;
-            txtNombre.Location = new Point(191, 57);
+            txtNombre.ForeColor = Color.Black;
+            txtNombre.Location = new Point(189, 87);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(289, 31);
+            txtNombre.Size = new Size(309, 31);
             txtNombre.TabIndex = 7;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.ForeColor = Color.White;
-            label8.Location = new Point(22, 379);
+            label8.Location = new Point(65, 389);
             label8.Name = "label8";
             label8.Size = new Size(95, 25);
             label8.TabIndex = 7;
@@ -297,7 +302,7 @@
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.White;
-            label7.Location = new Point(289, 607);
+            label7.Location = new Point(51, 699);
             label7.Name = "label7";
             label7.Size = new Size(121, 25);
             label7.TabIndex = 6;
@@ -307,7 +312,7 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.White;
-            label6.Location = new Point(38, 597);
+            label6.Location = new Point(51, 618);
             label6.Name = "label6";
             label6.Size = new Size(109, 25);
             label6.TabIndex = 5;
@@ -318,7 +323,7 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.White;
-            label5.Location = new Point(289, 487);
+            label5.Location = new Point(95, 547);
             label5.Name = "label5";
             label5.Size = new Size(60, 25);
             label5.TabIndex = 4;
@@ -328,7 +333,7 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.White;
-            label4.Location = new Point(42, 472);
+            label4.Location = new Point(74, 468);
             label4.Name = "label4";
             label4.Size = new Size(81, 25);
             label4.TabIndex = 3;
@@ -338,7 +343,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.White;
-            label3.Location = new Point(38, 139);
+            label3.Location = new Point(74, 159);
             label3.Name = "label3";
             label3.Size = new Size(88, 25);
             label3.TabIndex = 2;
@@ -348,7 +353,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(9, 59);
+            label2.Location = new Point(26, 87);
             label2.Name = "label2";
             label2.Size = new Size(157, 25);
             label2.TabIndex = 1;
@@ -358,31 +363,31 @@
             // 
             textBox3.BackColor = Color.FromArgb(32, 32, 32);
             textBox3.ForeColor = Color.White;
-            textBox3.Location = new Point(574, 385);
+            textBox3.Location = new Point(609, 60);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.PlaceholderText = "           Buscar Producto...";
-            textBox3.Size = new Size(609, 43);
+            textBox3.Size = new Size(682, 43);
             textBox3.TabIndex = 2;
             // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = SystemColors.Menu;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.Location = new Point(526, 446);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.Location = new Point(544, 159);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.Size = new Size(915, 339);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridView1.Size = new Size(879, 451);
             dataGridView1.TabIndex = 5;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellContentDoubleClick += dataGridView1_CellContentDoubleClick;
@@ -391,18 +396,18 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.White;
-            label1.Location = new Point(560, 357);
+            label1.Location = new Point(535, 69);
             label1.Name = "label1";
-            label1.Size = new Size(145, 25);
+            label1.Size = new Size(68, 25);
             label1.TabIndex = 12;
-            label1.Text = "Buscar Producto.";
+            label1.Text = "Buscar ";
             label1.Click += label1_Click;
             // 
             // btnBuscar
             // 
             btnBuscar.BackColor = Color.DarkGoldenrod;
             btnBuscar.ForeColor = SystemColors.ActiveCaptionText;
-            btnBuscar.Location = new Point(1212, 402);
+            btnBuscar.Location = new Point(1325, 69);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(112, 34);
             btnBuscar.TabIndex = 13;
@@ -415,11 +420,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(1587, 856);
-            Controls.Add(label1);
             Controls.Add(groupBox1);
-            Controls.Add(btnBuscar);
-            Controls.Add(dataGridView1);
-            Controls.Add(textBox3);
             ForeColor = Color.Black;
             Name = "frmProducto";
             Text = "frmProducto";
@@ -429,7 +430,6 @@
             ((System.ComponentModel.ISupportInitialize)nmStockMinimo).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
